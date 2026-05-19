@@ -3,215 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>郭宇 — 品牌视频内容</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<title>郭宇 — 品牌内容与视频</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Noto Sans SC','Inter',sans-serif;
-  color:#2C2416;background:#F5F0E5;
+  color:#1a1a1a;background:#e8e4db;
   -webkit-font-smoothing:antialiased;
 }
 .page{
-  max-width:780px;margin:24px auto;background:#FFF;
-  box-shadow:0 2px 16px rgba(0,0,0,.06);
+  width:210mm;height:297mm;margin:20px auto;overflow:hidden;
+  background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.12);
+  display:grid;grid-template-columns:190px 1fr;
 }
-.inner{padding:32px 40px}
-.top-bar{height:3px;background:#A0522D}
-
-.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
-.header h1{font-family:'Noto Serif SC',serif;font-size:1.6rem;font-weight:900;letter-spacing:0.04em}
-.header .sub{font-size:0.78rem;color:#8C7A6B;margin-top:2px}
-.header .contact{text-align:right;font-size:0.72rem;color:#5C4F3F;line-height:1.7}
-.header .contact a{color:#5C4F3F;text-decoration:none}
-
-.highlight-box{
-  background:#FBF9F1;border:1px solid #EBE5D5;padding:10px 14px;
-  font-size:0.78rem;line-height:1.6;color:#5C4F3F;margin-bottom:10px;
+/* Sidebar */
+.sidebar{
+  background:#2C2416;color:#e0d8c8;
+  padding:28px 20px;
+  display:flex;flex-direction:column;gap:18px;
 }
-.highlight-box strong{color:#2C2416}
-.highlight-box .tag{
-  display:inline-block;padding:2px 7px;
-  background:#FFF176;font-size:0.65rem;font-weight:500;margin-right:4px;
+.sidebar .name{
+  font-family:'Noto Serif SC',serif;font-size:1.5rem;font-weight:900;
+  color:#fff;letter-spacing:0.06em;line-height:1.2;
 }
-
-.sec{margin-bottom:14px}
-.sec-title{
-  font-family:'Noto Serif SC',serif;font-size:0.85rem;font-weight:700;
-  padding-bottom:4px;margin-bottom:8px;
-  border-bottom:1.2px solid #2C2416;
-  letter-spacing:0.02em;
+.sidebar .role{
+  font-size:0.72rem;color:#b8a88a;margin-top:4px;letter-spacing:0.04em;
 }
-.sec-title .en{font-size:0.65rem;color:#8C7A6B;font-weight:400;margin-left:6px;font-family:'Noto Sans SC',sans-serif}
-
-.skill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
-.skill-row .cat{font-size:0.68rem;color:#B8A88A;white-space:nowrap;font-weight:500;min-width:52px}
-.skill-tag{
-  font-size:0.7rem;padding:2px 7px;
-  background:#FBF9F1;border:1px solid #EBE5D5;
-  font-family:'Fira Code','Consolas',monospace;
+.sidebar .block{}
+.sidebar .block h3{
+  font-size:0.62rem;text-transform:uppercase;letter-spacing:0.15em;
+  color:#8c7a6b;margin-bottom:10px;font-weight:500;
 }
-.skill-tag.star{background:#FFF176;border-color:#F4D758}
-
-.project{margin-bottom:10px;padding-left:12px;border-left:2px solid #EBE5D5}
-.project-header{display:flex;justify-content:space-between;align-items:baseline}
-.project-header h3{font-size:0.84rem;font-weight:700}
-.project-header .meta{font-size:0.68rem;color:#8C7A6B;font-family:'Fira Code',monospace;white-space:nowrap}
-.project .desc{font-size:0.76rem;color:#5C4F3F;margin-top:3px;line-height:1.55}
-.project .highlight{font-size:0.7rem;color:#A0522D;margin-top:3px;font-weight:500}
-.project .tools{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
-.project .tools span{
-  font-size:0.65rem;padding:1px 6px;
-  background:#FBF9F1;color:#5C4F3F;
+.sidebar .info-row{
+  font-size:0.72rem;line-height:1.8;color:#d4c8ad;
+}
+.sidebar .info-row a{color:#d4c8ad;text-decoration:none}
+.sidebar .tag-list{display:flex;flex-wrap:wrap;gap:5px}
+.sidebar .tag{
+  font-size:0.65rem;padding:3px 8px;
   font-family:'Fira Code',monospace;
+  background:rgba(255,255,255,.06);color:#d4c8ad;
 }
+.sidebar .tag.hl{background:#FFF176;color:#2C2416;font-weight:500}
+.sidebar .divider{height:1px;background:rgba(255,255,255,.08);margin:4px 0}
 
-.edu-item{display:flex;justify-content:space-between;align-items:baseline}
-.edu-item h3{font-size:0.82rem;font-weight:700}
-.edu-item .date{font-size:0.7rem;color:#8C7A6B;font-family:'Fira Code',monospace}
-.edu-item .detail{font-size:0.76rem;color:#5C4F3F;margin-top:1px}
+/* Main */
+.main{padding:28px 28px;display:flex;flex-direction:column;gap:12px}
+.main .section{}
+.main .section h2{
+  font-family:'Noto Serif SC',serif;font-size:0.8rem;font-weight:700;
+  letter-spacing:0.04em;margin-bottom:7px;
+  padding-bottom:3px;border-bottom:1.5px solid #1a1a1a;
+  display:flex;align-items:baseline;gap:8px;
+}
+.main .section h2 .en{
+  font-size:0.58rem;color:#999;font-weight:400;font-family:'Noto Sans SC',sans-serif;letter-spacing:0;
+}
+.main .intro{
+  font-size:0.72rem;line-height:1.6;color:#444;
+}
+.main .intro em{font-style:normal;background:#FFF9C4;padding:0 2px}
 
-.portfolio-link{
-  display:inline-flex;align-items:center;gap:5px;
-  padding:5px 14px;margin-top:4px;
-  background:#2C2416;color:#FBF9F1;
-  text-decoration:none;font-size:0.76rem;font-weight:500;
+.project{margin-bottom:8px;padding:8px 12px;background:#fafaf8;border-left:3px solid #2C2416}
+.project:last-child{margin-bottom:0}
+.project .p-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px}
+.project .p-head h4{font-size:0.78rem;font-weight:700}
+.project .p-head .p-meta{font-size:0.63rem;color:#999;font-family:'Fira Code',monospace;white-space:nowrap}
+.project .p-desc{font-size:0.7rem;line-height:1.5;color:#555}
+.project .p-tools{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
+.project .p-tools span{
+  font-size:0.62rem;padding:2px 7px;
   font-family:'Fira Code',monospace;
-}
-.status-badge{
-  display:inline-block;padding:3px 10px;
-  font-size:0.7rem;background:#FFF176;
-  font-weight:500;
+  background:#2C2416;color:#e0d8c8;
 }
 
+.edu-line{font-size:0.78rem;color:#444;line-height:1.6}
+.edu-line strong{font-size:0.82rem}
+
+.status-line{
+  display:flex;align-items:center;gap:10px;margin-top:4px;
+  padding-top:14px;border-top:1px solid #e8e8e8;
+}
+.pill{
+  font-size:0.68rem;padding:4px 12px;font-weight:500;
+  background:#FFF176;color:#2C2416;
+}
+
+@page{size:A4;margin:0}
 @media print{
-  body{background:#FFF}
-  .page{box-shadow:none;margin:0;max-width:100%}
-  .inner{padding:28px 32px}
-  .top-bar{background:#A0522D}
-  .skill-tag.star{print-color-adjust:exact;-webkit-print-color-adjust:exact}
-  .highlight-box{background:#FFF}
+  body{background:#fff}
+  .page{box-shadow:none;margin:0;width:210mm;height:297mm;overflow:hidden}
+  .sidebar{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .tag.hl{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .project{border-left-color:#2C2416}
 }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="top-bar"></div>
-  <div class="inner">
 
-    <div class="header">
-      <div>
-        <h1>郭宇</h1>
-        <div class="sub">酿酒工程 × 独立视频制作 · 2026届</div>
-      </div>
-      <div class="contact">
-        济南 · <a href="tel:19546159322">19546159322</a><br>
-        <a href="https://zgbs3.github.io/portfolio/">zgbs3.github.io/portfolio</a><br>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div>
+      <div class="name">郭宇</div>
+      <div class="role">酿酒工程 × 视频制作</div>
+    </div>
+
+    <div class="block">
+      <h3>联系</h3>
+      <div class="info-row">
+        济南<br>
+        <a href="tel:19546159322">19546159322</a><br>
         B站：晓曦嘻嘻嘻
       </div>
     </div>
 
-    <div class="highlight-box">
-      <span class="tag">酿酒专业</span><span class="tag">独立视频制作</span><span class="tag">AI工具链</span>
-      <p style="margin-top:6px">
-        <strong>懂产品，也会做内容。</strong>酿酒工程科班，理解食品/酒类行业的产品逻辑；
-        同时独立掌握 AI 视频全流程——出图、动化、配音、剪辑一人包办。
-        品牌团队里，我是那个<strong>不需要解释产品就能直接出片</strong>的人。
-      </p>
-    </div>
-
-    <div class="sec">
-      <div class="sec-title">技能工具<span class="en">Skills</span></div>
-      <div class="skill-row">
-        <span class="cat">视频制作</span>
-        <span class="skill-tag star">Premiere Pro</span>
-        <span class="skill-tag star">剪映</span>
-        <span class="skill-tag">Suno配乐</span>
-        <span class="skill-tag">AI配音</span>
-      </div>
-      <div class="skill-row">
-        <span class="cat">AI出图</span>
-        <span class="skill-tag star">ComfyUI</span>
-        <span class="skill-tag star">Midjourney</span>
-        <span class="skill-tag">ControlNet</span>
-        <span class="skill-tag">Image2</span>
-      </div>
-      <div class="skill-row">
-        <span class="cat">AI视频</span>
-        <span class="skill-tag star">即梦</span>
-        <span class="skill-tag star">可灵</span>
-        <span class="skill-tag star">RunningHub</span>
-      </div>
-      <div class="skill-row">
-        <span class="cat">行业知识</span>
-        <span class="skill-tag star">酿酒工艺</span>
-        <span class="skill-tag star">食品科学</span>
-        <span class="skill-tag">发酵工程</span>
+    <div class="block">
+      <h3>作品集</h3>
+      <div class="info-row" style="font-family:'Fira Code',monospace;font-size:0.68rem;word-break:break-all">
+        zgbs3.github.io<br>/portfolio
       </div>
     </div>
 
-    <div class="sec">
-      <div class="sec-title">视频案例<span class="en">Portfolio</span></div>
+    <div class="block">
+      <h3>视频能力</h3>
+      <div class="tag-list">
+        <span class="tag hl">Premiere Pro</span>
+        <span class="tag hl">剪映</span>
+        <span class="tag hl">即梦 / 可灵</span>
+        <span class="tag hl">ComfyUI</span>
+        <span class="tag">Midjourney</span>
+        <span class="tag">RunningHub</span>
+        <span class="tag">Suno 配乐</span>
+        <span class="tag">AI 配音</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>行业知识</h3>
+      <div class="tag-list">
+        <span class="tag hl">酿酒工艺</span>
+        <span class="tag hl">食品科学</span>
+        <span class="tag">发酵工程</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>教育</h3>
+      <div style="font-size:0.72rem;color:#d4c8ad;line-height:1.6">
+        <strong style="color:#fff">齐鲁工业大学</strong><br>
+        酿酒工程 · 本科<br>
+        2026届
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="section">
+      <h2>求职方向<span class="en">Target</span></h2>
+      <div class="intro">
+        <strong>品牌策划 / 视频制作 / 新媒体内容</strong> · 全职 · 济南/山东/可沟通
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>关于我<span class="en">About</span></h2>
+      <div class="intro">
+        <em>酿酒科班 + 独立视频制作</em>——一个不太常见的组合。
+        四年酿酒工程，理解食品行业从原料到终端的产品逻辑，能把产品卖点翻译成消费者看得懂的画面。
+        同时独立掌握 AI 视频全流程：AI 出图、动化、配音、剪辑一人包办。
+        品牌团队里，我是那个<em>不需要别人解释产品、直接就能出片</em>的人。
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>视频案例<span class="en">Cases</span></h2>
 
       <div class="project">
-        <div class="project-header">
-          <h3>环太平洋 · 品牌风格短片</h3>
-          <span class="meta">2'30" · 独立创作</span>
+        <div class="p-head">
+          <h4>品牌风格短片 · 环太平洋</h4>
+          <span class="p-meta">2'30" · 独立</span>
         </div>
-        <div class="desc">
-          从零完成电影级画面短片。ComfyUI 搭建出图管线 → AI 动化 → 配音配乐 → PR 剪辑成片。展示了独立产出高质量视觉素材的能力，同等流程可用于品牌故事片、产品氛围视频。
+        <div class="p-desc">
+          从零完成一支电影级画面短片——策划、AI 出图、动化、配音配乐、剪辑全流程。证明了<em>一个人就能产出品牌级视觉素材</em>，同等方法可用于产品氛围片、品牌故事片，降低视频外包成本。
         </div>
-        <div class="highlight">→ 对品牌方的价值：一个人就能完成从画面到成片的视频制作，降低外包依赖。</div>
-        <div class="tools"><span>ComfyUI</span><span>即梦</span><span>可灵</span><span>RunningHub</span><span>PR</span></div>
+        <div class="p-tools">
+          <span>ComfyUI</span><span>即梦/可灵</span><span>PR</span><span>Suno配乐</span>
+        </div>
       </div>
 
       <div class="project">
-        <div class="project-header">
-          <h3>虚构产品广告 · 创意策划到成片</h3>
-          <span class="meta">30s · 独立创作</span>
+        <div class="p-head">
+          <h4>虚构产品广告</h4>
+          <span class="p-meta">30s · 独立</span>
         </div>
-        <div class="desc">
-          为现实中不存在的产品做一支广告——自己定义产品、设计叙事、出画面、剪成片。证明了从零构建品牌视觉故事的能力。
+        <div class="p-desc">
+          为一个现实中不存在的产品做了一支广告——自己定义产品、设计叙事、出画面、剪成片。展示了从产品概念到营销物料的完整落地能力，适用于新品上市概念视频、品牌创意提案。
         </div>
-        <div class="highlight">→ 适用场景：新品上市概念视频、品牌创意提案、活动宣传快速出片。</div>
-        <div class="tools"><span>Midjourney</span><span>即梦</span><span>可灵</span><span>PR</span></div>
+        <div class="p-tools">
+          <span>Midjourney</span><span>即梦</span><span>PR</span>
+        </div>
       </div>
 
       <div class="project">
-        <div class="project-header">
-          <h3>短视频系列 · 多主题实验</h3>
-          <span class="meta">3×15s · 独立创作</span>
+        <div class="p-head">
+          <h4>短视频系列</h4>
+          <span class="p-meta">3×15s · 独立</span>
         </div>
-        <div class="desc">
-          动画场景、道具复现等多元主题，验证不同 AI 工具组合的产出效果。积累适用于抖音/快手/视频号等平台的短视频制作经验。
+        <div class="p-desc">
+          动画场景、道具复现等多元主题，验证不同 AI 工具组合在短视频平台（抖音/快手/视频号）的产出效果。
         </div>
-        <div class="tools"><span>ComfyUI</span><span>即梦</span><span>剪映</span></div>
-      </div>
-
-      <div style="text-align:center;margin-top:8px">
-        <a class="portfolio-link" href="https://zgbs3.github.io/portfolio/" target="_blank">▶ 作品集：zgbs3.github.io/portfolio</a>
+        <div class="p-tools">
+          <span>ComfyUI</span><span>剪映</span><span>即梦</span>
+        </div>
       </div>
     </div>
 
-    <div class="sec">
-      <div class="sec-title">教育背景<span class="en">Education</span></div>
-      <div class="edu-item">
-        <div>
-          <h3>齐鲁工业大学 · 酿酒工程</h3>
-          <div class="detail">本科 · 2026届毕业生</div>
+    <div class="section">
+      <h2>为什么是我<span class="en">Why Me</span></h2>
+      <div class="intro" style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;gap:10px;align-items:baseline">
+          <span style="font-weight:700;white-space:nowrap;font-size:0.76rem">懂产品</span>
+          <span style="font-size:0.76rem;color:#555">四年酿酒工程，不是"背了两天产品手册"，是真懂行业。</span>
         </div>
-        <span class="date">2022 — 2026</span>
+        <div style="display:flex;gap:10px;align-items:baseline">
+          <span style="font-weight:700;white-space:nowrap;font-size:0.76rem">会做内容</span>
+          <span style="font-size:0.76rem;color:#555">AI 视频全流程一人包办，降低内容外包依赖。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline">
+          <span style="font-weight:700;white-space:nowrap;font-size:0.76rem">扛得住事</span>
+          <span style="font-size:0.76rem;color:#555">一支 2 分半的片子踩了无数坑，逐个解决，最终跑通。学习能力和韧性不是说的，是做出来的。</span>
+        </div>
       </div>
-      <p style="font-size:0.72rem;color:#8C7A6B;line-height:1.6;margin-top:3px">
-        系统学习酿酒工艺、食品科学、发酵工程。能将产品知识转化为精准的营销内容创意。
-      </p>
     </div>
 
-    <div style="margin-top:18px;padding-top:12px;border-top:1px solid #EBE5D5">
-      <span class="status-badge">正在找工作</span>
-      <span style="font-size:0.72rem;color:#8C7A6B;margin-left:8px">
-        品牌视频 / 新媒体内容 / 视频制作 · 济南/可沟通
-      </span>
+    <div class="status-line">
+      <span class="pill">正在找工作</span>
+      <span style="font-size:0.72rem;color:#888">作品集在线可看 · 视频当面可播 · 接受出差/调配</span>
     </div>
 
   </div>
