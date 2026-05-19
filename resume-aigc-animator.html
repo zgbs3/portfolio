@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>郭宇 — AIGC 动画师</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Caveat:wght@400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&family=Caveat:wght@400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -13,90 +13,74 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 .page{
-  max-width:800px;margin:40px auto;background:#FFF;
-  box-shadow:0 2px 20px rgba(0,0,0,.08);
+  max-width:780px;margin:24px auto;background:#FFF;
+  box-shadow:0 2px 16px rgba(0,0,0,.06);
 }
-.inner{padding:44px 52px}
-.top-bar{
-  height:4px;background:#FFF176;
-}
+.inner{padding:32px 40px}
+.top-bar{height:3px;background:#FFF176}
 
-/* Header */
-.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px}
-.header h1{font-family:'Noto Serif SC',serif;font-size:2rem;font-weight:900;letter-spacing:0.05em}
-.header .sub{font-size:0.9rem;color:#8C7A6B;margin-top:4px}
-.header .contact{text-align:right;font-size:0.8rem;color:#5C4F3F;line-height:1.8}
-.header .contact a{color:#5C4F3F;text-decoration:none;border-bottom:1px dotted #D4C8AD}
-.header .contact a:hover{color:#2C2416;border-color:#2C2416}
+.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.header h1{font-family:'Noto Serif SC',serif;font-size:1.6rem;font-weight:900;letter-spacing:0.04em}
+.header .sub{font-size:0.78rem;color:#8C7A6B;margin-top:2px}
+.header .contact{text-align:right;font-size:0.72rem;color:#5C4F3F;line-height:1.7}
+.header .contact a{color:#5C4F3F;text-decoration:none}
 
-/* Section */
-.sec{margin-bottom:24px}
+.sec{margin-bottom:14px}
 .sec-title{
-  font-family:'Noto Serif SC',serif;font-size:0.95rem;font-weight:700;
-  padding-bottom:6px;margin-bottom:14px;
-  border-bottom:1.5px solid #2C2416;
-  letter-spacing:0.03em;
+  font-family:'Noto Serif SC',serif;font-size:0.85rem;font-weight:700;
+  padding-bottom:4px;margin-bottom:8px;
+  border-bottom:1.2px solid #2C2416;
+  letter-spacing:0.02em;
 }
-.sec-title .en{font-size:0.7rem;color:#8C7A6B;font-weight:400;margin-left:8px;font-family:'Noto Sans SC',sans-serif}
+.sec-title .en{font-size:0.65rem;color:#8C7A6B;font-weight:400;margin-left:6px;font-family:'Noto Sans SC',sans-serif}
 
-/* Skills */
-.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.skill-cat h4{font-size:0.75rem;color:#B8A88A;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px}
-.skill-list{display:flex;flex-wrap:wrap;gap:6px}
-.skill-item{
-  font-size:0.8rem;padding:3px 10px;
+/* Skills — single row */
+.skill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.skill-row .cat{font-size:0.68rem;color:#B8A88A;white-space:nowrap;font-weight:500}
+.skill-tag{
+  font-size:0.7rem;padding:2px 7px;
   background:#FBF9F1;border:1px solid #EBE5D5;
   font-family:'Fira Code','Consolas',monospace;
 }
-.skill-item.star{background:#FFF176;border-color:#F4D758}
+.skill-tag.star{background:#FFF176;border-color:#F4D758}
 
-/* Projects */
-.project{margin-bottom:18px;padding-left:16px;border-left:2px solid #EBE5D5}
+/* Projects — compact */
+.project{margin-bottom:10px;padding-left:12px;border-left:2px solid #EBE5D5}
 .project-header{display:flex;justify-content:space-between;align-items:baseline}
-.project-header h3{font-size:0.95rem;font-weight:700}
-.project-header .meta{font-size:0.75rem;color:#8C7A6B;font-family:'Fira Code',monospace;white-space:nowrap}
-.project .desc{font-size:0.85rem;color:#5C4F3F;margin-top:6px;line-height:1.7}
-.project .tools{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.project-header h3{font-size:0.84rem;font-weight:700}
+.project-header .meta{font-size:0.68rem;color:#8C7A6B;font-family:'Fira Code',monospace;white-space:nowrap}
+.project .desc{font-size:0.76rem;color:#5C4F3F;margin-top:3px;line-height:1.55}
+.project .tools{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
 .project .tools span{
-  font-size:0.7rem;padding:2px 8px;
-  background:var(--note-bg,#FBF9F1);color:#5C4F3F;
+  font-size:0.65rem;padding:1px 6px;
+  background:#FBF9F1;color:#5C4F3F;
   font-family:'Fira Code',monospace;
 }
-.project .note{
-  font-family:'Caveat',cursive;font-size:1rem;color:#B8A88A;
-  margin-top:6px;padding-left:2px;
-}
 
-/* Education */
 .edu-item{display:flex;justify-content:space-between;align-items:baseline}
-.edu-item h3{font-size:0.9rem;font-weight:700}
-.edu-item .date{font-size:0.75rem;color:#8C7A6B;font-family:'Fira Code',monospace}
-.edu-item .detail{font-size:0.85rem;color:#5C4F3F;margin-top:3px}
+.edu-item h3{font-size:0.82rem;font-weight:700}
+.edu-item .date{font-size:0.7rem;color:#8C7A6B;font-family:'Fira Code',monospace}
+.edu-item .detail{font-size:0.76rem;color:#5C4F3F;margin-top:1px}
 
-/* Portfolio link */
 .portfolio-link{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:8px 18px;margin-top:8px;
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 14px;margin-top:4px;
   background:#2C2416;color:#FBF9F1;
-  text-decoration:none;font-size:0.85rem;font-weight:500;
+  text-decoration:none;font-size:0.76rem;font-weight:500;
   font-family:'Fira Code',monospace;
 }
-.portfolio-link:hover{background:#5C4F3F}
-
-/* Status */
 .status-badge{
-  display:inline-block;padding:4px 12px;
-  font-size:0.75rem;background:#FFF176;
-  font-weight:500;margin-bottom:10px;
+  display:inline-block;padding:3px 10px;
+  font-size:0.7rem;background:#FFF176;
+  font-weight:500;
 }
 
-/* Print */
 @media print{
   body{background:#FFF}
   .page{box-shadow:none;margin:0;max-width:100%}
-  .inner{padding:30px 36px}
+  .inner{padding:28px 32px}
   .top-bar{background:#2C2416}
-  .skill-item.star{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .skill-tag.star{print-color-adjust:exact;-webkit-print-color-adjust:exact}
 }
 </style>
 </head>
@@ -105,62 +89,48 @@ body{
   <div class="top-bar"></div>
   <div class="inner">
 
-    <!-- HEADER -->
     <div class="header">
       <div>
         <h1>郭宇</h1>
         <div class="sub">AIGC 动画师 · AI 视频创作者</div>
       </div>
       <div class="contact">
-        济南 · 长清区<br>
-        <a href="tel:19546159322">19546159322</a><br>
+        济南长清 · <a href="tel:19546159322">19546159322</a><br>
         <a href="https://zgbs3.github.io/portfolio/">zgbs3.github.io/portfolio</a><br>
-        <span style="color:#B8A88A">B站：晓曦嘻嘻嘻</span>
+        B站：晓曦嘻嘻嘻
       </div>
     </div>
 
-    <!-- PROFILE -->
     <div class="sec">
       <div class="sec-title">个人定位<span class="en">Profile</span></div>
-      <p style="font-size:0.9rem;line-height:1.8;color:#5C4F3F">
-        独立跑通 <strong>AI 动画全链路</strong>——从分镜设计、AI 生成、到后期合成的创作者。
-        熟练运用 ComfyUI + AnimateDiff + ControlNet 管线，已完成 <strong>2分30秒 AI 短片</strong>并上线 B站（播放 4,000+）。
-        持续学习，持续实验，追求<strong>可复现的经验</strong>而不只是好看的结果。
+      <p style="font-size:0.8rem;line-height:1.6;color:#5C4F3F">
+        独立跑通 <strong>AI 动画全链路</strong>——从分镜设计、AI 生成到后期合成的创作者。
+        熟练运用 ComfyUI + AnimateDiff + ControlNet 管线，已完成 <strong>2分30秒 AI 短片</strong>上线 B站（播放 4,000+）。
+        追求<strong>可复现的经验</strong>而不只是好看的结果，持续学习，持续实验。
       </p>
     </div>
 
-    <!-- SKILLS -->
     <div class="sec">
       <div class="sec-title">技能工具<span class="en">Skills</span></div>
-      <div class="skill-grid">
-
-        <div class="skill-cat">
-          <h4>AI 生成管线</h4>
-          <div class="skill-list">
-            <span class="skill-item star">ComfyUI</span>
-            <span class="skill-item star">AnimateDiff</span>
-            <span class="skill-item star">ControlNet</span>
-            <span class="skill-item">IPAdapter</span>
-            <span class="skill-item">Midjourney</span>
-            <span class="skill-item">Runway</span>
-          </div>
-        </div>
-
-        <div class="skill-cat">
-          <h4>后期与设计</h4>
-          <div class="skill-list">
-            <span class="skill-item star">After Effects</span>
-            <span class="skill-item star">Premiere Pro</span>
-            <span class="skill-item">DaVinci Resolve</span>
-            <span class="skill-item">Photoshop</span>
-            <span class="skill-item">剪映</span>
-          </div>
-        </div>
-
+      <div class="skill-row">
+        <span class="cat">AI管线</span>
+        <span class="skill-tag star">ComfyUI</span>
+        <span class="skill-tag star">AnimateDiff</span>
+        <span class="skill-tag star">ControlNet</span>
+        <span class="skill-tag">IPAdapter</span>
+        <span class="skill-tag">Midjourney</span>
+        <span class="skill-tag">Runway</span>
+      </div>
+      <div class="skill-row">
+        <span class="cat">后期</span>
+        <span class="skill-tag star">After Effects</span>
+        <span class="skill-tag star">Premiere Pro</span>
+        <span class="skill-tag">DaVinci</span>
+        <span class="skill-tag">Photoshop</span>
+        <span class="skill-tag">剪映</span>
       </div>
     </div>
 
-    <!-- PROJECTS -->
     <div class="sec">
       <div class="sec-title">项目经历<span class="en">Projects</span></div>
 
@@ -170,13 +140,9 @@ body{
           <span class="meta">2'30" · 独立完成</span>
         </div>
         <div class="desc">
-          用 AI 还原电影质感——机甲在雨中出拳的瞬间。从纯 Prompt 试错到 ControlNet + 参考帧方案，
-          经历帧间闪烁、画面抖动等问题，最终通过分段生成 + 光流插帧 + AE 后期稳定跑通全片。
+          用 AI 还原电影质感。经纯 Prompt→ControlNet+参考帧→分段生成+光流插帧+AE 后期稳定的迭代路径，跑通全片。
         </div>
-        <div class="tools">
-          <span>ComfyUI</span><span>AnimateDiff</span><span>ControlNet</span><span>After Effects</span>
-        </div>
-        <div class="note">—— B站上线播放 4,000+，全程可复现</div>
+        <div class="tools"><span>ComfyUI</span><span>AnimateDiff</span><span>ControlNet</span><span>AE</span></div>
       </div>
 
       <div class="project">
@@ -185,28 +151,20 @@ body{
           <span class="meta">30s · 独立完成</span>
         </div>
         <div class="desc">
-          全 AI 流程实验：MJ 出 Keyframe → Runway 动态化。面对 AI 画面与实物不匹配的问题，
-          采用 AI 画面做基底 + 实拍产品层合成 + 快节奏剪辑策略，在没有实拍资源的情况下完成产品广告。
+          全 AI 流程：MJ Keyframe → Runway 动态化。AI 画面做基底 + 实拍产品层合成 + 快节奏剪辑，零实拍资源完成产品广告。
         </div>
-        <div class="tools">
-          <span>Midjourney</span><span>Runway</span><span>After Effects</span>
-        </div>
-        <div class="note">—— 没有实拍资源，也能讲好产品故事</div>
+        <div class="tools"><span>Midjourney</span><span>Runway</span><span>AE</span></div>
       </div>
 
       <div class="project">
         <div class="project-header">
-          <h3>原神 · 1 分钟短片 <span style="font-weight:400;font-size:0.75rem;color:#B8A88A">（制作中）</span></h3>
+          <h3>原神 · 1分钟短片（制作中）</h3>
           <span class="meta">1min · 独立制作</span>
         </div>
         <div class="desc">
-          挑战更长叙事：用 AI 讲一个有情绪起伏的故事。正在攻克长视频中角色一致性
-          和情绪连贯性两大难点，采用分镜情绪节奏设计 + IPAdapter 角色一致性方案。
+          挑战长叙事 AI 动画。攻克角色一致性与情绪连贯性，采用分镜情绪节奏设计 + IPAdapter 方案。
         </div>
-        <div class="tools">
-          <span>ComfyUI</span><span>IPAdapter</span><span>AnimateDiff</span>
-        </div>
-        <div class="note">—— 进行中，预计近期完成</div>
+        <div class="tools"><span>ComfyUI</span><span>IPAdapter</span><span>AnimateDiff</span></div>
       </div>
 
       <div class="project">
@@ -214,21 +172,14 @@ body{
           <h3>短片合集 · 实验性创作</h3>
           <span class="meta">3×15s · 独立完成</span>
         </div>
-        <div class="desc">
-          三支 15 秒短视频，分别探索不同风格和工具的边界，积累快节奏素材库和风格化经验。
-        </div>
+        <div class="desc">三支短视频，探索不同风格与工具边界，积累快节奏素材和风格化经验。</div>
       </div>
 
-      <!-- Portfolio -->
-      <div style="text-align:center;margin-top:16px">
-        <a class="portfolio-link" href="https://zgbs3.github.io/portfolio/" target="_blank">
-          ▶ zgbs3.github.io/portfolio
-        </a>
-        <div style="font-size:0.7rem;color:#B8A88A;margin-top:6px">作品集中包含视频播放、工作流拆解、技能图谱</div>
+      <div style="text-align:center;margin-top:8px">
+        <a class="portfolio-link" href="https://zgbs3.github.io/portfolio/" target="_blank">▶ 作品集：zgbs3.github.io/portfolio</a>
       </div>
     </div>
 
-    <!-- EDUCATION -->
     <div class="sec">
       <div class="sec-title">教育背景<span class="en">Education</span></div>
       <div class="edu-item">
@@ -240,10 +191,9 @@ body{
       </div>
     </div>
 
-    <!-- STATUS -->
-    <div style="margin-top:28px;padding-top:16px;border-top:1px solid #EBE5D5">
+    <div style="margin-top:18px;padding-top:12px;border-top:1px solid #EBE5D5">
       <span class="status-badge">正在找工作</span>
-      <span style="font-size:0.8rem;color:#8C7A6B;margin-left:8px">全职 · 济南/青岛/可沟通</span>
+      <span style="font-size:0.72rem;color:#8C7A6B;margin-left:8px">全职 · 济南/青岛/可沟通</span>
     </div>
 
   </div>
