@@ -9,240 +9,148 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Noto Sans SC','Inter',sans-serif;
-  color:#1a1a1a;background:#e8e4db;
+  color:#2C2416;background:#F5F0E5;
   -webkit-font-smoothing:antialiased;
 }
 .page{
-  width:210mm;height:297mm;margin:20px auto;overflow:hidden;
-  background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.12);
-  display:grid;grid-template-columns:190px 1fr;
+  width:210mm;margin:16px auto;background:#FFFDF9;
+  box-shadow:0 1px 8px rgba(0,0,0,.06);
+  border:1px solid #EBE5D5;
 }
-/* Sidebar */
-.sidebar{
-  background:#1a1a1a;color:#e0e0e0;
-  padding:28px 20px;
-  display:flex;flex-direction:column;gap:18px;
-}
-.sidebar .name{
-  font-family:'Noto Serif SC',serif;font-size:1.35rem;font-weight:900;
-  color:#fff;letter-spacing:0.06em;line-height:1.2;
-}
-.sidebar .role{
-  font-size:0.68rem;color:#a0a0a0;margin-top:2px;letter-spacing:0.04em;
-}
-.sidebar .block{}
-.sidebar .block h3{
-  font-size:0.58rem;text-transform:uppercase;letter-spacing:0.14em;
-  color:#777;margin-bottom:7px;font-weight:500;
-}
-.sidebar .info-row{
-  font-size:0.68rem;line-height:1.7;color:#ccc;
-}
-.sidebar .info-row a{color:#ccc;text-decoration:none}
-.sidebar .tag-list{display:flex;flex-wrap:wrap;gap:4px}
-.sidebar .tag{
-  font-size:0.6rem;padding:2px 6px;
-  font-family:'Fira Code',monospace;
-  background:rgba(255,255,255,.08);color:#ddd;
-}
-.sidebar .tag.hl{background:#FFD54F;color:#1a1a1a;font-weight:500}
-.sidebar .divider{height:1px;background:rgba(255,255,255,.1);margin:4px 0}
+.inner{padding:24px 32px}
+.top-rule{height:2px;background:#2C2416;margin-bottom:0}
 
-/* Main */
-.main{padding:28px 28px;display:flex;flex-direction:column;gap:12px}
-.main .section{}
-.main .section h2{
-  font-family:'Noto Serif SC',serif;font-size:0.8rem;font-weight:700;
-  letter-spacing:0.04em;margin-bottom:7px;
-  padding-bottom:3px;border-bottom:1.5px solid #1a1a1a;
-  display:flex;align-items:baseline;gap:8px;
-}
-.main .section h2 .en{
-  font-size:0.58rem;color:#999;font-weight:400;font-family:'Noto Sans SC',sans-serif;letter-spacing:0;
-}
-.main .intro{
-  font-size:0.72rem;line-height:1.6;color:#444;
-}
-.main .intro em{font-style:normal;background:#FFF9C4;padding:0 2px}
+/* Header */
+.hdr{display:flex;justify-content:space-between;align-items:start;padding:18px 0 12px;border-bottom:1px solid #D4C8AD}
+.hdr h1{font-family:'Noto Serif SC',serif;font-size:1.5rem;font-weight:900;letter-spacing:0.05em}
+.hdr .sub{font-size:0.8rem;color:#8C7A6B;margin-top:3px}
+.hdr .info{text-align:right;font-size:0.72rem;color:#5C4F3F;line-height:1.8}
 
-.project{margin-bottom:8px;padding:8px 12px;background:#fafaf8;border-left:3px solid #FFD54F}
-.project:last-child{margin-bottom:0}
-.project .p-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px}
-.project .p-head h4{font-size:0.78rem;font-weight:700}
-.project .p-head .p-meta{font-size:0.63rem;color:#999;font-family:'Fira Code',monospace;white-space:nowrap}
-.project .p-desc{font-size:0.7rem;line-height:1.5;color:#555}
-.project .p-tools{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
-.project .p-tools span{
-  font-size:0.62rem;padding:2px 7px;
-  font-family:'Fira Code',monospace;
-  background:#1a1a1a;color:#e0e0e0;
-}
+/* Section */
+.sec{padding:14px 0;border-bottom:1px dotted #D4C8AD}
+.sec:last-child{border-bottom:none}
+.sec h2{font-family:'Noto Serif SC',serif;font-size:0.88rem;font-weight:700;margin-bottom:8px;letter-spacing:0.03em}
 
-.edu-line{font-size:0.78rem;color:#444;line-height:1.6}
-.edu-line strong{font-size:0.82rem}
+/* Skills — inline rows */
+.skills{margin-bottom:6px}
+.skills .sk-row{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:5px}
+.skills .sk-label{font-size:0.7rem;color:#B8A88A;white-space:nowrap;min-width:48px;font-weight:500}
+.skills .sk-label::after{content:'：'}
+.skills .sk-item{
+  font-size:0.7rem;padding:2px 7px;font-family:'Fira Code',monospace;
+  background:#FBF9F1;border:1px solid #EBE5D5;
+}
+.skills .sk-item.k{background:#FFF9C4;border-color:#F4D758;font-weight:500}
 
-.status-line{
-  display:flex;align-items:center;gap:10px;margin-top:4px;
-  padding-top:14px;border-top:1px solid #e8e8e8;
-}
-.pill{
-  font-size:0.68rem;padding:4px 12px;font-weight:500;
-  background:#FFD54F;color:#1a1a1a;
-}
+/* Projects */
+.proj{margin-bottom:10px;padding:8px 14px;background:#FDFCF7;border:1px solid #EBE5D5}
+.proj:last-child{margin-bottom:0}
+.proj .pj-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px}
+.proj .pj-top strong{font-size:0.82rem}
+.proj .pj-top .pj-meta{font-size:0.66rem;color:#B8A88A;font-family:'Fira Code',monospace;white-space:nowrap}
+.proj .pj-desc{font-size:0.74rem;line-height:1.6;color:#5C4F3F}
+.proj .pj-tools{margin-top:5px;display:flex;flex-wrap:wrap;gap:4px}
+.proj .pj-tools span{font-size:0.64rem;padding:1px 7px;font-family:'Fira Code',monospace;background:#2C2416;color:#EBE5D5}
+
+/* Bottom */
+.foot{display:flex;justify-content:space-between;align-items:center;padding:12px 0 4px;font-size:0.72rem;color:#8C7A6B}
+.foot .pill{background:#FFF9C4;padding:3px 10px;font-weight:500;font-size:0.68rem}
 
 @page{size:A4;margin:0}
 @media print{
   body{background:#fff}
-  .page{box-shadow:none;margin:0;width:210mm;height:297mm;overflow:hidden}
-  .sidebar{print-color-adjust:exact;-webkit-print-color-adjust:exact}
-  .tag.hl{print-color-adjust:exact;-webkit-print-color-adjust:exact}
-  .project{border-left-color:#1a1a1a}
+  .page{box-shadow:none;margin:0;border:none}
+  .sk-item.k{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .pill{print-color-adjust:exact;-webkit-print-color-adjust:exact}
 }
 </style>
 </head>
 <body>
 <div class="page">
+<div class="top-rule"></div>
+<div class="inner">
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <div>
-      <div class="name">郭宇</div>
-      <div class="role">AI 动画创作者</div>
-    </div>
+<div class="hdr">
+  <div>
+    <h1>郭宇</h1>
+    <div class="sub">AI 动画创作者 — 独立完成全流程</div>
+  </div>
+  <div class="info">
+    济南 · 19546159322<br>
+    zgbs3.github.io/portfolio<br>
+    B站：晓曦嘻嘻嘻
+  </div>
+</div>
 
-    <div class="block">
-      <h3>联系</h3>
-      <div class="info-row">
-        济南<br>
-        <a href="tel:19546159322">19546159322</a><br>
-        B站：晓曦嘻嘻嘻
-      </div>
-    </div>
+<div class="sec">
+  <h2>关于我</h2>
+  <p style="font-size:0.78rem;line-height:1.7;color:#5C4F3F">
+    从零自学 AI 动画。能搭 ComfyUI 工作流，会用 ControlNet 控图，了解即梦/可灵/RunningHub 等工具各自擅长的场景。
+    做过 2 分半完整短片，踩过大量坑，每个坑补一个技能。现在在攻克更长叙事和角色一致性。
+    专业是酿酒工程，和动画没关系——但自学能力就是从那里锻炼出来的。
+  </p>
+</div>
 
-    <div class="block">
-      <h3>作品集</h3>
-      <div class="info-row" style="font-family:'Fira Code',monospace;font-size:0.68rem;word-break:break-all">
-        zgbs3.github.io<br>/portfolio
-      </div>
-    </div>
+<div class="sec">
+  <h2>技能</h2>
+  <div class="skills">
+    <div class="sk-row"><span class="sk-label">AI出图</span><span class="sk-item k">ComfyUI</span><span class="sk-item k">ControlNet</span><span class="sk-item k">Midjourney</span><span class="sk-item">IPAdapter</span><span class="sk-item">Image2</span><span class="sk-item">Banana</span></div>
+    <div class="sk-row"><span class="sk-label">AI视频</span><span class="sk-item k">即梦</span><span class="sk-item k">可灵</span><span class="sk-item k">RunningHub</span><span class="sk-item">ComfyUI工作流</span></div>
+    <div class="sk-row"><span class="sk-label">剪辑后期</span><span class="sk-item k">Premiere</span><span class="sk-item k">剪映</span><span class="sk-item">Suno配乐</span><span class="sk-item">AI配音</span></div>
+    <div class="sk-row"><span class="sk-label">文本</span><span class="sk-item k">Gemini</span><span class="sk-item">Claude</span><span class="sk-item">GPT</span><span class="sk-item">DeepSeek</span></div>
+  </div>
+</div>
 
-    <div class="block">
-      <h3>核心能力</h3>
-      <div class="tag-list">
-        <span class="tag hl">ComfyUI 工作流</span>
-        <span class="tag hl">ControlNet</span>
-        <span class="tag hl">即梦 / 可灵</span>
-        <span class="tag hl">RunningHub</span>
-        <span class="tag">Midjourney</span>
-        <span class="tag">IPAdapter</span>
-        <span class="tag">Image2</span>
-        <span class="tag">Banana</span>
-        <span class="tag">Gemini</span>
-        <span class="tag">Claude / GPT</span>
-      </div>
-    </div>
+<div class="sec">
+  <h2>项目</h2>
 
-    <div class="block">
-      <h3>后期</h3>
-      <div class="tag-list">
-        <span class="tag hl">Premiere Pro</span>
-        <span class="tag hl">剪映</span>
-        <span class="tag">Suno 配乐</span>
-        <span class="tag">AI 配音</span>
-      </div>
+  <div class="proj">
+    <div class="pj-top"><strong>环太平洋 · AI 短片</strong><span class="pj-meta">2'30" · 耗时约两周</span></div>
+    <div class="pj-desc">
+      从零开始，第一步故意不参考原电影设置，先看 AI 能做到什么程度，再看差距在哪。
+      ComfyUI 搭无线画布+高清修复补帧管线 → Image2 出图 → Gemini 生成文本 → RunningHub 配音 → Suno 配乐 → PR 剪辑。
+      故事、建模、光影、声音每个环节都出过问题，逐一尝试、逐一改进。最后跑通，上线 B站。
     </div>
-
-    <div class="block">
-      <h3>教育</h3>
-      <div style="font-size:0.72rem;color:#ccc;line-height:1.6">
-        <strong style="color:#fff">齐鲁工业大学</strong><br>
-        酿酒工程 · 本科<br>
-        2026届
-      </div>
-    </div>
+    <div class="pj-tools"><span>ComfyUI</span><span>Image2</span><span>Gemini</span><span>RunningHub</span><span>Suno</span><span>PR</span></div>
   </div>
 
-  <!-- MAIN -->
-  <div class="main">
-
-    <div class="section">
-      <h2>求职方向<span class="en">Target</span></h2>
-      <div class="intro">
-        <strong>AIGC 动画师 / AI 视频创作</strong> · 全职 · 济南/青岛
-      </div>
+  <div class="proj">
+    <div class="pj-top"><strong>虚构产品广告</strong><span class="pj-meta">30s</span></div>
+    <div class="pj-desc">
+      为一个现实中不存在的产品做一支广告。自己定产品、写叙事、Midjourney 出 Keyframe、即梦/可灵动化、PR 剪辑。证明能从创意文案到成片独立完成。
     </div>
-
-    <div class="section">
-      <h2>关于我<span class="en">About</span></h2>
-      <div class="intro">
-        独立完成 AI 动画<em>全流程</em>——从分镜到出图、动化、配音、剪辑一人包办。
-        能搭 ComfyUI 工作流，会用 ControlNet 精准控图，对比过多家 AI 模型并知道各自的优劣势。
-        不满足于"跑通就行"——<em>故意不参考原片设定</em>，先看 AI 的差距在哪，再逐个补。
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>项目<span class="en">Projects</span></h2>
-
-      <div class="project">
-        <div class="p-head">
-          <h4>环太平洋 · AI 短片</h4>
-          <span class="p-meta">2'30" · 独立 · 10+天</span>
-        </div>
-        <div class="p-desc">
-          主动不参考原电影设定，测试 AI 能力边界。搭建 ComfyUI 无线画布 + 高清修复补帧工作流 → Image2 出图 → Gemini 生成文本 → RunningHub 配音 → Suno 配乐 → PR 剪辑。故事、建模、光影、声音等环节均遇到问题，逐步学习逐个改进，最终跑通全片上线 B站。
-        </div>
-        <div class="p-tools">
-          <span>ComfyUI</span><span>Image2</span><span>Gemini</span><span>RunningHub</span><span>Suno</span><span>PR</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="p-head">
-          <h4>虚构产品广告</h4>
-          <span class="p-meta">30s · 独立</span>
-        </div>
-        <div class="p-desc">
-          构想一个现实中不存在的产品，自己定义产品定位、设计叙事。Midjourney 出 Keyframe → 即梦/可灵动化 → PR 剪辑成片。证明了独立完成从创意到成片的能力，适合新品概念视频、品牌创意提案。
-        </div>
-        <div class="p-tools">
-          <span>Midjourney</span><span>即梦</span><span>可灵</span><span>PR</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="p-head">
-          <h4>短视频系列</h4>
-          <span class="p-meta">3×15s · 独立</span>
-        </div>
-        <div class="p-desc">
-          动画场景还原、小说道具复现等不同主题，探索不同 AI 工具组合的产出效果，积累多风格视频经验。
-        </div>
-        <div class="p-tools">
-          <span>ComfyUI</span><span>即梦</span><span>可灵</span><span>剪映</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="p-head">
-          <h4>原神 · AI 动画</h4>
-          <span class="p-meta">1min · 制作中</span>
-        </div>
-        <div class="p-desc">
-          挑战更长叙事和角色一致性，正在攻克分镜节奏与 AI 画面连贯性。
-        </div>
-        <div class="p-tools">
-          <span>ComfyUI</span><span>IPAdapter</span><span>即梦</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="status-line">
-      <span class="pill">正在找工作</span>
-      <span style="font-size:0.72rem;color:#888">作品集在线可看 · 视频当面可播</span>
-    </div>
-
+    <div class="pj-tools"><span>Midjourney</span><span>即梦</span><span>可灵</span><span>PR</span></div>
   </div>
+
+  <div class="proj">
+    <div class="pj-top"><strong>短视频系列</strong><span class="pj-meta">3×15s</span></div>
+    <div class="pj-desc">
+      动画场景还原、小说道具复现等不同主题，练不同工具组合，积累快节奏素材经验。
+    </div>
+    <div class="pj-tools"><span>ComfyUI</span><span>即梦</span><span>可灵</span><span>剪映</span></div>
+  </div>
+
+  <div class="proj">
+    <div class="pj-top"><strong>原神 · AI 动画</strong><span class="pj-meta">1min · 制作中</span></div>
+    <div class="pj-desc">挑战更长叙事和角色一致性。正在解决分镜节奏和 AI 画面连贯性问题。</div>
+    <div class="pj-tools"><span>ComfyUI</span><span>IPAdapter</span><span>即梦</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <h2>教育</h2>
+  <p style="font-size:0.78rem;color:#5C4F3F">
+    <strong>齐鲁工业大学</strong> · 酿酒工程 · 本科 · 2026届
+    <span style="color:#B8A88A;margin-left:8px">（跨专业自学 AI 动画）</span>
+  </p>
+</div>
+
+<div class="foot">
+  <span class="pill">正在找工作 — 随时到岗</span>
+  <span>作品集在线可看 · 视频当面可播</span>
+</div>
+
+</div>
 </div>
 </body>
 </html>
