@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>郭宇 — AIGC 动画师</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&family=Caveat:wght@400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -34,9 +34,8 @@ body{
 }
 .sec-title .en{font-size:0.65rem;color:#8C7A6B;font-weight:400;margin-left:6px;font-family:'Noto Sans SC',sans-serif}
 
-/* Skills — single row */
 .skill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
-.skill-row .cat{font-size:0.68rem;color:#B8A88A;white-space:nowrap;font-weight:500}
+.skill-row .cat{font-size:0.68rem;color:#B8A88A;white-space:nowrap;font-weight:500;min-width:52px}
 .skill-tag{
   font-size:0.7rem;padding:2px 7px;
   background:#FBF9F1;border:1px solid #EBE5D5;
@@ -44,7 +43,6 @@ body{
 }
 .skill-tag.star{background:#FFF176;border-color:#F4D758}
 
-/* Projects — compact */
 .project{margin-bottom:10px;padding-left:12px;border-left:2px solid #EBE5D5}
 .project-header{display:flex;justify-content:space-between;align-items:baseline}
 .project-header h3{font-size:0.84rem;font-weight:700}
@@ -92,10 +90,10 @@ body{
     <div class="header">
       <div>
         <h1>郭宇</h1>
-        <div class="sub">AIGC 动画师 · AI 视频创作者</div>
+        <div class="sub">AI 动画创作者 · 全流程独立制作</div>
       </div>
       <div class="contact">
-        济南长清 · <a href="tel:19546159322">19546159322</a><br>
+        济南 · <a href="tel:19546159322">19546159322</a><br>
         <a href="https://zgbs3.github.io/portfolio/">zgbs3.github.io/portfolio</a><br>
         B站：晓曦嘻嘻嘻
       </div>
@@ -104,30 +102,43 @@ body{
     <div class="sec">
       <div class="sec-title">个人定位<span class="en">Profile</span></div>
       <p style="font-size:0.8rem;line-height:1.6;color:#5C4F3F">
-        独立跑通 <strong>AI 动画全链路</strong>——从分镜设计、AI 生成到后期合成的创作者。
-        熟练运用 ComfyUI + AnimateDiff + ControlNet 管线，已完成 <strong>2分30秒 AI 短片</strong>上线 B站（播放 4,000+）。
-        追求<strong>可复现的经验</strong>而不只是好看的结果，持续学习，持续实验。
+        独立完成 AI 动画全流程——从文本生成、AI 出图、图生视频到配音剪辑。
+        能搭 ComfyUI 工作流，会调 ControlNet，用过多家 AI 模型对比选优。
+        不满足于"出片就行"，主动测试 AI 能力边界：故意不参考原片设置，看差距在哪，再逐个补。
       </p>
     </div>
 
     <div class="sec">
       <div class="sec-title">技能工具<span class="en">Skills</span></div>
       <div class="skill-row">
-        <span class="cat">AI管线</span>
+        <span class="cat">文案</span>
+        <span class="skill-tag star">Gemini</span>
+        <span class="skill-tag">Claude</span>
+        <span class="skill-tag">GPT</span>
+        <span class="skill-tag">DeepSeek</span>
+      </div>
+      <div class="skill-row">
+        <span class="cat">出图</span>
         <span class="skill-tag star">ComfyUI</span>
-        <span class="skill-tag star">AnimateDiff</span>
         <span class="skill-tag star">ControlNet</span>
+        <span class="skill-tag star">Midjourney</span>
+        <span class="skill-tag">Image2</span>
+        <span class="skill-tag">Banana</span>
         <span class="skill-tag">IPAdapter</span>
-        <span class="skill-tag">Midjourney</span>
-        <span class="skill-tag">Runway</span>
+      </div>
+      <div class="skill-row">
+        <span class="cat">视频</span>
+        <span class="skill-tag star">即梦</span>
+        <span class="skill-tag star">可灵</span>
+        <span class="skill-tag star">RunningHub</span>
+        <span class="skill-tag">ComfyUI工作流</span>
       </div>
       <div class="skill-row">
         <span class="cat">后期</span>
-        <span class="skill-tag star">After Effects</span>
         <span class="skill-tag star">Premiere Pro</span>
-        <span class="skill-tag">DaVinci</span>
-        <span class="skill-tag">Photoshop</span>
-        <span class="skill-tag">剪映</span>
+        <span class="skill-tag star">剪映</span>
+        <span class="skill-tag">Suno配乐</span>
+        <span class="skill-tag">AI配音</span>
       </div>
     </div>
 
@@ -137,42 +148,43 @@ body{
       <div class="project">
         <div class="project-header">
           <h3>环太平洋 · AI 模仿短片</h3>
-          <span class="meta">2'30" · 独立完成</span>
+          <span class="meta">2'30" · 独立创作 · 耗时 10+ 天</span>
         </div>
         <div class="desc">
-          用 AI 还原电影质感。经纯 Prompt→ControlNet+参考帧→分段生成+光流插帧+AE 后期稳定的迭代路径，跑通全片。
+          从零创作，主动不参考原电影设定，测试 AI 能力上限。工作流：ComfyUI 搭建无线画布 + 高清修复补帧管线 → Image2 出图 → Gemini 生成文本 → RunningHub 配音 → PR/剪映剪辑。故事地点、建模、光影、声音等环节均遇到问题，逐项学习改进。
         </div>
-        <div class="tools"><span>ComfyUI</span><span>AnimateDiff</span><span>ControlNet</span><span>AE</span></div>
+        <div class="tools"><span>ComfyUI</span><span>Image2</span><span>Gemini</span><span>RunningHub</span><span>PR</span><span>Suno</span></div>
       </div>
 
       <div class="project">
         <div class="project-header">
-          <h3>创意产品介绍 · 30s 快剪</h3>
-          <span class="meta">30s · 独立完成</span>
+          <h3>创意产品介绍 · 虚构产品广告</h3>
+          <span class="meta">30s · 独立创作</span>
         </div>
         <div class="desc">
-          全 AI 流程：MJ Keyframe → Runway 动态化。AI 画面做基底 + 实拍产品层合成 + 快节奏剪辑，零实拍资源完成产品广告。
+          构想一个现实中不存在的产品，从产品定位到叙事到画面全盘设计。Midjourney 出 Keyframe → 即梦/可灵动化 → PR 剪辑成片。证明能独立完成从创意到成品的商业视频制作。
         </div>
-        <div class="tools"><span>Midjourney</span><span>Runway</span><span>AE</span></div>
+        <div class="tools"><span>Midjourney</span><span>即梦</span><span>可灵</span><span>PR</span></div>
       </div>
 
       <div class="project">
         <div class="project-header">
-          <h3>原神 · 1分钟短片（制作中）</h3>
-          <span class="meta">1min · 独立制作</span>
+          <h3>短视频系列 · 多风格实验</h3>
+          <span class="meta">3×15s · 独立创作</span>
         </div>
         <div class="desc">
-          挑战长叙事 AI 动画。攻克角色一致性与情绪连贯性，采用分镜情绪节奏设计 + IPAdapter 方案。
+          动画场景还原、小说道具复现等不同主题。探索不同 AI 工具组合的产出效果，积累风格化经验。
         </div>
-        <div class="tools"><span>ComfyUI</span><span>IPAdapter</span><span>AnimateDiff</span></div>
+        <div class="tools"><span>ComfyUI</span><span>即梦</span><span>可灵</span><span>剪映</span></div>
       </div>
 
       <div class="project">
         <div class="project-header">
-          <h3>短片合集 · 实验性创作</h3>
-          <span class="meta">3×15s · 独立完成</span>
+          <h3>原神 · AI 动画短片</h3>
+          <span class="meta">1min · 制作中</span>
         </div>
-        <div class="desc">三支短视频，探索不同风格与工具边界，积累快节奏素材和风格化经验。</div>
+        <div class="desc">挑战更长叙事和角色一致性，正在攻克分镜节奏和 AI 画面连贯性。</div>
+        <div class="tools"><span>ComfyUI</span><span>IPAdapter</span><span>即梦</span></div>
       </div>
 
       <div style="text-align:center;margin-top:8px">
@@ -184,7 +196,7 @@ body{
       <div class="sec-title">教育背景<span class="en">Education</span></div>
       <div class="edu-item">
         <div>
-          <h3>山东管理学院 · 酿酒工程</h3>
+          <h3>齐鲁工业大学 · 酿酒工程</h3>
           <div class="detail">本科 · 2026届</div>
         </div>
         <span class="date">2022 — 2026</span>
@@ -193,7 +205,7 @@ body{
 
     <div style="margin-top:18px;padding-top:12px;border-top:1px solid #EBE5D5">
       <span class="status-badge">正在找工作</span>
-      <span style="font-size:0.72rem;color:#8C7A6B;margin-left:8px">全职 · 济南/青岛/可沟通</span>
+      <span style="font-size:0.72rem;color:#8C7A6B;margin-left:8px">AI动画 / 视频创意 · 济南/青岛/可沟通</span>
     </div>
 
   </div>
