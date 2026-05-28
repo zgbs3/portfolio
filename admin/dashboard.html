@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理后台 · 内容管理</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <header class="dashboard-header">
+    <h1>内容管理</h1>
+    <button class="btn btn-danger btn-sm" id="logout-btn">退出</button>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="creative">创意合集</button>
+      <button class="tab-btn" data-tab="learning">学习记录</button>
+    </div>
+
+    <div class="panel active" id="panel-creative">
+      <div style="margin-bottom:16px;">
+        <button class="btn btn-primary" id="add-creative-btn">+ 新增创意</button>
+      </div>
+      <div id="creative-list"></div>
+    </div>
+
+    <div class="panel" id="panel-learning">
+      <div style="margin-bottom:16px;">
+        <button class="btn btn-primary" id="add-learning-btn">+ 新增记录</button>
+      </div>
+      <div id="learning-list"></div>
+    </div>
+  </main>
+
+  <!-- Edit Modal -->
+  <div class="modal-overlay" id="modal" style="display:none;">
+    <div class="modal" id="modal-content"></div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
