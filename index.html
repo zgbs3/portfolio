@@ -1,899 +1,131 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="郭宇 · AI动画师 · 个人作品集">
-<title>郭宇 — AI 动画师</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Caveat:wght@400;600&family=Fira+Code:wght@400&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-<style>
-/* ============ CSS RESET & VARIABLES ============ */
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
-body{
-  font-family:'Noto Sans SC','Inter',sans-serif;
-  color:#2C2416;background:#FBF9F1;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;
-}
-::selection{background:#FFF176;color:#2C2416}
-
-:root{
-  --bg:#FBF9F1;
-  --bg-warm:#F5F0E5;
-  --text:#2C2416;
-  --text2:#5C4F3F;
-  --text3:#8C7A6B;
-  --text4:#B8A88A;
-  --accent:#FFF176;
-  --accent-strong:#F4D758;
-  --card:#FFFFFF;
-  --card-border:#DDD5C5;
-  --card-border-light:#EBE5D5;
-  --note-bg:#E8E0D0;
-  --divider:#D4C8AD;
-  --serif:'Noto Serif SC','Georgia',serif;
-  --sans:'Noto Sans SC','Inter',sans-serif;
-  --caveat:'Caveat',cursive;
-  --mono:'Fira Code','Consolas',monospace;
-  --playful:'ZCOOL QingKe HuangYou',cursive;
-}
-
-/* ============ PAPER TEXTURE ============ */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background-image:
-    repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(180,160,130,.015) 2px,rgba(180,160,130,.015) 4px),
-    repeating-linear-gradient(90deg,transparent,transparent 1px,rgba(180,160,130,.01) 1px,rgba(180,160,130,.01) 3px);
-}
-
-section{position:relative;z-index:1}
-section{padding:100px 2rem}
-.section-inner{max-width:880px;margin:0 auto}
-
-/* ============ DECORATIVE DIVIDER ============ */
-.section-divider{
-  display:flex;align-items:center;justify-content:center;gap:14px;
-  max-width:880px;margin:0 auto;padding:0 2rem;
-  position:relative;z-index:1;
-}
-.section-divider .d-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--divider),transparent)}
-.section-divider .d-gem{font-size:0.7rem;color:var(--text4);opacity:0.5;font-family:var(--serif)}
-
-/* ============ SECTION HEADERS (varied) ============ */
-.sec-num{
-  font-family:var(--mono);font-size:0.7rem;color:var(--text4);
-  letter-spacing:0.2em;margin-bottom:0.4rem;display:block;
-}
-.sec-title{
-  font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);
-  font-weight:700;color:var(--text);margin-bottom:0.4rem;line-height:1.2;
-}
-.sec-sub{
-  font-family:var(--sans);font-size:0.9rem;color:var(--text3);
-  margin-bottom:2.5rem;font-weight:300;
-}
-.sec-title mark{background:var(--accent);padding:0 6px}
-
-/* ============ NAV ============ */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(251,249,241,0.88);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--card-border-light);
-  padding:14px 2rem;font-size:0.8rem;
-  display:flex;justify-content:space-between;align-items:center;
-}
-nav .nav-name{font-family:var(--serif);font-weight:600;color:var(--text)}
-nav .nav-links{display:flex;gap:1.5rem;list-style:none}
-nav .nav-links a{
-  text-decoration:none;color:var(--text3);
-  transition:color 0.2s;font-size:0.75rem;letter-spacing:0.05em;
-}
-nav .nav-links a:hover{color:var(--text)}
-
-/* ============ HERO ============ */
-.hero{
-  min-height:100vh;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;text-align:center;
-  padding:6rem 2rem 4rem;position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 50% 40%,rgba(255,241,118,0.18),transparent 60%),
-    radial-gradient(circle at 85% 80%,rgba(255,241,118,0.06),transparent 40%),
-    radial-gradient(circle at 15% 20%,rgba(180,160,130,0.08),transparent 40%);
-  pointer-events:none;
-}
-.hero::after{
-  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:1px;height:60%;max-height:500px;
-  background:linear-gradient(transparent,var(--divider),transparent);
-  pointer-events:none;opacity:0.5;
-}
-.hero-tag{
-  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.4em;
-  color:var(--text4);text-transform:uppercase;margin-bottom:1.5rem;
-  padding:5px 16px;border:1px solid var(--card-border);background:var(--card);
-  display:inline-block;position:relative;z-index:1;
-}
-.hero-tag::after{
-  content:'✦';position:absolute;right:-8px;top:-8px;
-  font-size:0.5rem;color:var(--accent-strong);
-}
-.hero-name{
-  font-family:var(--serif);font-size:clamp(3rem,8vw,5.5rem);
-  font-weight:900;color:var(--text);line-height:1;
-  margin-bottom:1rem;position:relative;z-index:1;
-  letter-spacing:-0.02em;
-}
-.hero-name .char{
-  display:inline-block;opacity:0;animation:charIn 0.5s ease forwards;
-}
-@keyframes charIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-line{
-  font-family:var(--sans);font-size:clamp(0.95rem,1.5vw,1.15rem);
-  color:var(--text2);font-weight:300;margin-bottom:0.25rem;
-  position:relative;z-index:1;
-}
-.hero-line em{font-style:normal;color:var(--text);font-weight:500}
-.hero-scrawl{
-  font-family:var(--caveat);font-size:1.2rem;color:var(--text4);
-  margin-bottom:2rem;position:relative;z-index:1;
-}
-.hero-stats{
-  display:flex;gap:2.5rem;
-  font-family:var(--sans);font-size:0.8rem;color:var(--text3);
-  position:relative;z-index:1;
-}
-.hero-stat{
-  text-align:center;padding:0.75rem 1.25rem;
-  background:var(--card);border:1px solid var(--card-border);
-}
-.hero-stat strong{
-  display:block;font-family:var(--serif);font-size:1.5rem;color:var(--text);
-  margin-bottom:2px;
-}
-.hero-scroll{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  font-size:0.65rem;color:var(--text4);letter-spacing:0.15em;
-  animation:heroBounce 2s ease-in-out infinite;z-index:1;
-}
-@keyframes heroBounce{0%,100%{opacity:0.2;transform:translateX(-50%) translateY(0)}
-50%{opacity:1;transform:translateX(-50%) translateY(8px)}}
-
-/* ============ SHOWREEL ============ */
-.showreel{background:var(--bg)}
-.showreel-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:16px;
-  margin-top:1.5rem;
-}
-.showreel-main{
-  grid-column:1/-1;aspect-ratio:16/9;
-  background:var(--card);position:relative;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;border:1px solid var(--card-border);
-  box-shadow:0 2px 20px rgba(0,0,0,.04);
-}
-.showreel-main .vp-inner{
-  text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;
-}
-.showreel-card{
-  aspect-ratio:16/9;background:var(--card);
-  border:1px solid var(--card-border);padding:20px;
-  display:flex;flex-direction:column;
-  justify-content:flex-end;cursor:pointer;
-  transition:all 0.25s;position:relative;overflow:hidden;
-  box-shadow:0 2px 12px rgba(0,0,0,.03);
-}
-.showreel-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:var(--accent-strong);transform:scaleX(0);
-  transition:transform 0.3s;transform-origin:left;
-}
-.showreel-card:hover::before{transform:scaleX(1)}
-.showreel-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.08);border-color:var(--divider)}
-.showreel-card .thumb-num{
-  font-family:var(--mono);font-size:2.5rem;font-weight:700;
-  color:rgba(0,0,0,.04);position:absolute;top:8px;right:14px;
-  pointer-events:none;
-}
-.showreel-card .thumb-label{
-  font-family:var(--serif);font-size:0.9rem;font-weight:700;
-  color:var(--text);margin-bottom:3px;position:relative;z-index:1;
-}
-.showreel-card .thumb-detail{
-  font-size:0.7rem;color:var(--text4);font-family:var(--mono);
-  position:relative;z-index:1;
-}
-.showreel-card.active{border-color:var(--accent-strong);box-shadow:0 2px 16px rgba(244,215,88,.25)}
-.showreel-card.active::before{transform:scaleX(1)}
-
-/* ============ WORKFLOW ============ */
-.workflow{background:var(--bg-warm)}
-.workflow-card{
-  background:var(--card);border:1px solid var(--card-border);
-  padding:2rem 2rem 1.5rem;margin-bottom:1.5rem;
-  position:relative;transition:all 0.25s;
-  box-shadow:0 2px 16px rgba(0,0,0,.03);
-}
-.workflow-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.06);border-color:var(--divider)}
-.workflow-card .wf-number{
-  position:absolute;top:-1px;right:20px;
-  font-family:var(--serif);font-size:3rem;font-weight:900;
-  color:rgba(0,0,0,.025);pointer-events:none;line-height:1;
-}
-.workflow-card .wf-project{
-  font-family:var(--serif);font-size:1.15rem;font-weight:700;
-  margin-bottom:1rem;color:var(--text);
-  padding-right:60px;
-}
-.workflow-card .wf-steps{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:0.75rem;
-}
-.wf-step{
-  background:var(--bg);padding:0.85rem;font-size:0.78rem;
-  line-height:1.5;position:relative;
-  transition:background 0.2s;
-}
-.wf-step:hover{background:var(--card)}
-.wf-step .step-icon{font-size:0.9rem;margin-bottom:0.3rem;display:block}
-.wf-step .step-title{font-weight:600;font-size:0.75rem;margin-bottom:0.25rem;color:var(--text)}
-.wf-step .step-desc{color:var(--text3);font-size:0.7rem}
-.wf-tag{
-  display:inline-block;font-size:0.6rem;padding:3px 10px;
-  background:var(--bg);color:var(--text2);
-  font-family:var(--mono);margin-right:5px;margin-top:0.6rem;
-  border:1px solid var(--card-border);
-}
-.wf-note{
-  font-family:var(--caveat);font-size:1.15rem;color:var(--text4);
-  margin-top:0.75rem;display:block;
-}
-
-/* ============ SKILLS ============ */
-.skills{background:var(--bg)}
-.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-.skill-col{}
-.skill-col h3{
-  font-family:var(--serif);font-size:1.05rem;font-weight:700;
-  margin-bottom:1.25rem;color:var(--text);
-  display:flex;align-items:center;gap:8px;
-}
-.skill-col h3 .col-icon{font-size:1.1rem}
-.skill-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:0.6rem 0;border-bottom:1px solid var(--card-border-light);
-  transition:padding 0.2s;
-}
-.skill-row:hover{padding-left:6px}
-.skill-name{font-size:0.85rem;font-weight:500;color:var(--text)}
-.skill-level-label{
-  font-size:0.6rem;color:var(--text4);font-family:var(--mono);
-  min-width:28px;text-align:right;
-}
-.skill-dots{display:flex;gap:4px;margin-left:6px}
-.skill-dots span{
-  width:7px;height:7px;border-radius:50%;background:var(--card-border);
-  transition:transform 0.2s,background 0.2s;
-}
-.skill-dots span.filled{background:var(--text2);transform:scale(1.1)}
-.skill-row:hover .skill-dots span.filled{background:var(--accent-strong)}
-
-/* ============ ABOUT ============ */
-.about{background:var(--card);position:relative;overflow:hidden}
-.about::before{
-  content:'"';position:absolute;left:-0.5rem;top:1rem;
-  font-family:var(--serif);font-size:18rem;color:rgba(0,0,0,.015);
-  pointer-events:none;line-height:1;
-}
-.about-text{
-  font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.25rem);
-  line-height:1.9;color:var(--text2);max-width:680px;
-}
-.about-text mark{background:var(--accent);padding:0 5px}
-.about-text .highlight{
-  display:inline-block;padding:2px 0;border-bottom:2px solid var(--accent-strong);
-}
-.about-resume{
-  display:inline-block;margin-top:2rem;padding:12px 28px;
-  background:var(--text);color:var(--bg);text-decoration:none;
-  font-family:var(--mono);font-size:0.75rem;letter-spacing:0.05em;
-  transition:all 0.25s;
-}
-.about-resume:hover{background:var(--text2);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.12)}
-
-/* ============ LOG ============ */
-.log{background:var(--bg-warm)}
-.log-timeline{position:relative;padding-left:2rem}
-.log-timeline::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;
-  width:2px;background:linear-gradient(var(--accent-strong),var(--divider),var(--divider));
-}
-.log-entry{
-  position:relative;margin-bottom:1.75rem;
-  padding:1.25rem 1.5rem;background:var(--card);
-  border:1px solid var(--card-border);
-  box-shadow:0 2px 12px rgba(0,0,0,.03);
-  transform:rotate(0deg);transition:transform 0.25s,box-shadow 0.25s;
-}
-.log-entry:hover{transform:rotate(0.5deg);box-shadow:0 4px 20px rgba(0,0,0,.06)}
-.log-entry::before{
-  content:'';position:absolute;left:-2.2rem;top:1.3rem;
-  width:10px;height:10px;border-radius:50%;
-  background:var(--accent-strong);
-  border:2px solid var(--card);
-  box-shadow:0 0 0 1px var(--card-border);
-}
-.log-date{
-  font-family:var(--mono);font-size:0.65rem;color:var(--text4);
-  margin-bottom:0.35rem;letter-spacing:0.12em;
-}
-.log-entry h3{
-  font-family:var(--serif);font-size:0.95rem;font-weight:700;
-  color:var(--text);margin-bottom:0.35rem;
-}
-.log-entry p{
-  font-size:0.8rem;color:var(--text3);line-height:1.65;
-}
-.log-entry .sticker{
-  font-family:var(--caveat);font-size:1.05rem;color:var(--text4);
-  display:inline-block;margin-top:0.6rem;
-  background:var(--note-bg);padding:3px 12px;
-  transform:rotate(-1.5deg);
-}
-
-/* ============ THOUGHTS ============ */
-.thoughts{background:var(--bg)}
-.thought-card{
-  padding:2rem;margin-bottom:1.25rem;
-  background:var(--note-bg);
-  border-left:4px solid var(--accent-strong);
-  font-size:0.88rem;line-height:1.8;color:var(--text2);
-  transition:border-color 0.25s,transform 0.2s;
-}
-.thought-card:hover{border-color:var(--text2);transform:translateX(4px)}
-.thought-card h3{
-  font-family:var(--serif);font-size:1.05rem;font-weight:700;
-  color:var(--text);margin-bottom:0.6rem;
-}
-.thought-card .th-author{
-  display:block;margin-top:0.75rem;
-  font-family:var(--caveat);font-size:1rem;color:var(--text4);
-}
-
-/* ============ CONTACT ============ */
-.contact{text-align:left;background:var(--bg-warm)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.contact-info{}
-.contact-info h3{
-  font-family:var(--serif);font-size:1.05rem;font-weight:700;
-  color:var(--text);margin-bottom:1rem;
-}
-.contact-links{display:flex;flex-direction:column;gap:0.6rem}
-.contact-link{
-  font-family:var(--mono);font-size:0.8rem;color:var(--text2);
-  text-decoration:none;padding:0.5rem 0;
-  border-bottom:1px solid var(--card-border-light);
-  transition:all 0.2s;display:flex;align-items:center;gap:8px;
-}
-.contact-link .c-icon{font-size:0.9rem;width:20px;text-align:center}
-.contact-link:hover{color:var(--text);padding-left:6px}
-.contact-card{
-  background:var(--card);border:1px solid var(--card-border);
-  padding:1.5rem;text-align:center;display:flex;
-  flex-direction:column;align-items:center;justify-content:center;
-  box-shadow:0 2px 12px rgba(0,0,0,.03);
-}
-.contact-status{
-  display:inline-block;padding:8px 20px;
-  background:var(--accent);font-size:0.8rem;font-weight:600;
-  color:var(--text);margin-bottom:0.75rem;
-}
-.contact-card p{font-size:0.8rem;color:var(--text3);line-height:1.6}
-
-/* ============ FOOTER ============ */
-footer{
-  text-align:center;padding:3rem 2rem;
-  font-size:0.7rem;color:var(--text4);
-  font-family:var(--mono);position:relative;z-index:1;
-}
-footer .f-divider{
-  width:60px;height:1px;background:var(--divider);
-  margin:0 auto 1rem;
-}
-
-/* ============ RESPONSIVE ============ */
-@media(max-width:768px){
-  section{padding:70px 1.25rem}
-  nav{padding:10px 1.25rem}
-  nav .nav-links{gap:0.8rem;overflow-x:auto;white-space:nowrap}
-  nav .nav-links::-webkit-scrollbar{display:none}
-  .hero-stats{gap:1rem}
-  .hero-stat{padding:0.5rem 0.8rem}
-  .hero-name{font-size:2.5rem}
-  .showreel-grid{grid-template-columns:1fr}
-  .showreel-card{aspect-ratio:2/1}
-  .workflow-card{padding:1.5rem 1.25rem 1.25rem}
-  .wf-steps{grid-template-columns:1fr 1fr}
-  .skill-grid{grid-template-columns:1fr;gap:2rem}
-  .contact-grid{grid-template-columns:1fr}
-}
-
-@media(max-width:480px){
-  .hero-name{font-size:2rem}
-  .hero-line{font-size:0.85rem}
-  .hero-stats{flex-direction:column;gap:0.5rem;align-items:center}
-  .wf-steps{grid-template-columns:1fr}
-  .sec-title{font-size:1.4rem}
-  nav .nav-links{font-size:0.6rem;gap:0.5rem}
-  .about::before{font-size:10rem}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>郭宇 · 个人主页</title>
+  <meta name="description" content="永远热情，永远追逐。从山西到酿酒工程，从AI到动画创作。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<nav>
-  <span class="nav-name">郭宇</span>
-  <ul class="nav-links">
-    <li><a href="#showreel">作品</a></li>
-    <li><a href="#workflow">过程</a></li>
-    <li><a href="#skills">技能</a></li>
-    <li><a href="#about">关于</a></li>
-    <li><a href="#log">日志</a></li>
-    <li><a href="#contact">联系</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-tag">AI ANIMATOR & CREATOR</div>
-  <h1 class="hero-name">郭宇</h1>
-  <p class="hero-line">
-    AI 动画师 · <em>正在学习</em> · <em>正在生长</em>
-  </p>
-  <p class="hero-scrawl">—— 从酿酒到动画，每一次转身都认真</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><strong>6+</strong>作品</div>
-    <div class="hero-stat"><strong>AI</strong>原生工作流</div>
-    <div class="hero-stat"><strong>&infin;</strong>持续学习</div>
-  </div>
-  <div class="hero-scroll">↓ 往下看</div>
-</header>
-
-<!-- DECORATIVE DIVIDER -->
-<div class="section-divider"><span class="d-line"></span><span class="d-gem">&#9670;</span><span class="d-line"></span></div>
-
-<!-- SHOWREEL -->
-<section class="showreel" id="showreel">
-  <div class="section-inner">
-    <span class="sec-num">01</span>
-    <h2 class="sec-title">Showreel</h2>
-    <p class="sec-sub">每个作品背后都是一段"怎么做到的"故事</p>
-
-    <div class="showreel-grid">
-      <div class="showreel-main" id="main-player">
-        <iframe
-          src="//player.bilibili.com/player.html?bvid=BV1VudGBcEPR&page=1&autoplay=0&high_quality=1"
-          scrolling="no"
-          frameborder="0"
-          framespacing="0"
-          allowfullscreen="true"
-          style="width:100%;height:100%;border:none;"
-          title="环太平洋 · AI模仿短片">
-        </iframe>
-      </div>
-
-      <div class="showreel-card active" data-bvid="BV1VudGBcEPR" data-title="环太平洋 · AI模仿短片" data-tools="Gemini · ComfyUI · 即梦 · RunningHub · PR" data-time="2&apos;30&apos;&apos;">
-        <span class="thumb-num">01</span>
-        <span class="thumb-label">环太平洋 · AI模仿短片</span>
-        <span class="thumb-detail">2'30" · 融合战锤40K风格 · 独立全流程</span>
-      </div>
-
-      <div class="showreel-card" data-bvid="" data-title="创意产品介绍" data-tools="Midjourney · 即梦 · 可灵 · PR" data-time="30s">
-        <span class="thumb-num">02</span>
-        <span class="thumb-label">虚构产品广告</span>
-        <span class="thumb-detail">30s · 独立策划 · AI全流程落地</span>
-      </div>
-
-      <div class="showreel-card" data-bvid="" data-title="短片合集" data-tools="ComfyUI · 即梦 · 可灵 · 剪映" data-time="3×15s">
-        <span class="thumb-num">03</span>
-        <span class="thumb-label">短视频系列</span>
-        <span class="thumb-detail">3×15s · 多风格实验 · 快节奏素材</span>
-      </div>
-
-      <div class="showreel-card" data-bvid="" data-title="原神 · 正在制作" data-tools="ComfyUI · IPAdapter · 即梦 · Suno" data-time="1min">
-        <span class="thumb-num">04</span>
-        <span class="thumb-label">原神 · AI 动画</span>
-        <span class="thumb-detail">1min · 长叙事挑战 · Suno配乐</span>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">GY</span>
+      <div class="nav-links">
+        <a href="#about">关于</a>
+        <a href="#education">教育</a>
+        <a href="#skills">技能</a>
+        <a href="#works">作品</a>
+        <a href="#creative">创意</a>
+        <a href="#learning">学习</a>
+        <a href="#contact">联系</a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<div class="section-divider"><span class="d-line"></span><span class="d-gem">&#9670;</span><span class="d-line"></span></div>
-
-<!-- WORKFLOW -->
-<section class="workflow" id="workflow">
-  <div class="section-inner">
-    <span class="sec-num">02</span>
-    <h2 class="sec-title">工作流拆解</h2>
-    <p class="sec-sub">结果重要，但知道怎么<mark>复现</mark>更重要</p>
-
-    <div class="workflow-card">
-      <span class="wf-number">01</span>
-      <div class="wf-project">环太平洋 · AI模仿短片</div>
-      <div class="wf-steps">
-        <div class="wf-step">
-          <span class="step-icon">🎯</span>
-          <div class="step-title">起点</div>
-          <div class="step-desc">想用AI还原电影质感，故意不参考原片，融合战锤40K风格</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">🔬</span>
-          <div class="step-title">探索</div>
-          <div class="step-desc">Gemini出文本 → ComfyUI搭无线画布+高清修复出图 → 即梦动化 → RunningHub配音</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">💥</span>
-          <div class="step-title">踩坑</div>
-          <div class="step-desc">故事、画面造型、光影、声音，每个环节都出过问题，每个坑补一个技能</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">✨</span>
-          <div class="step-title">解决</div>
-          <div class="step-desc">逐项优化 + 补帧 → PR最终剪辑，第一版跑通全管线</div>
-        </div>
-      </div>
-      <span class="wf-tag">Gemini</span>
-	      <span class="wf-tag">ComfyUI</span>
-	      <span class="wf-tag">即梦</span>
-	      <span class="wf-tag">RunningHub</span>
-	      <span class="wf-tag">PR</span>
-	      <span class="wf-note">—— 第一版不理想但全管线跑通，下一版改进中</span>
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-avatar"><!-- avatar placeholder --></div>
+      <h1 class="hero-name">郭宇</h1>
+      <p class="hero-tagline">永远热情，永远追逐。</p>
+      <p class="hero-subtitle">从山西到酿酒工程，从AI到动画创作——热爱是唯一的导航。</p>
+      <div class="hero-scroll-hint">↓</div>
     </div>
+  </section>
 
-    <div class="workflow-card">
-      <span class="wf-number">02</span>
-      <div class="wf-project">创意产品介绍 · 30s快剪</div>
-      <div class="wf-steps">
-        <div class="wf-step">
-          <span class="step-icon">🎯</span>
-          <div class="step-title">起点</div>
-          <div class="step-desc">客户需要30s产品广告，但没实拍资源</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">🔬</span>
-          <div class="step-title">探索</div>
-          <div class="step-desc">全AI流程：MJ出Keyframe → Runway动态化</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">💥</span>
-          <div class="step-title">踩坑</div>
-          <div class="step-desc">AI画面和产品实物对不上，需要手动合成</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">✨</span>
-          <div class="step-title">解决</div>
-          <div class="step-desc">AI画面做基底 + 实拍产品层合成 + 快节奏剪辑弥补细节</div>
-        </div>
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">个人简介</h2>
+      <div class="about-content">
+        <p>来自山西，因为热爱选择了酿酒工程，也因为热爱走进了AI和动画的世界。我相信热情是最好的老师——它带我穿越实验室的发酵罐，也带我抵达画笔和代码交织的创作现场。永远追逐新鲜的事物，永远对世界保持好奇。</p>
       </div>
-      <span class="wf-tag">Midjourney</span>
-
-	      <span class="wf-tag">即梦</span>
-
-	      <span class="wf-tag">可灵</span>
-
-	      <span class="wf-tag">PR</span>
-      <span class="wf-note">—— 证明从创意到成片能独立完成</span>
     </div>
+  </section>
 
-    <div class="workflow-card" style="opacity:0.6">
-      <span class="wf-number">03</span>
-      <div class="wf-project">原神 · 1分钟短片 <span style="font-family:var(--caveat);color:var(--text3);font-size:0.9rem;">（制作中）</span></div>
-      <div class="wf-steps">
-        <div class="wf-step">
-          <span class="step-icon">🎯</span>
-          <div class="step-title">起点</div>
-          <div class="step-desc">挑战更长叙事：用AI讲一个有情绪起伏的原神故事</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">🔬</span>
-          <div class="step-title">探索中</div>
-          <div class="step-desc">尝试角色一致性 + 分镜情绪节奏设计</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">💥</span>
-          <div class="step-title">正在攻克</div>
-          <div class="step-desc">长视频的角色一致性——AI的薄弱环节</div>
-        </div>
-        <div class="wf-step">
-          <span class="step-icon">⏳</span>
-          <div class="step-title">下一步</div>
-          <div class="step-desc">完成角色设计 → 逐个分镜生成 → 后期串联</div>
-        </div>
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">教育背景</h2>
+      <div class="edu-placeholder card">
+        <p>待补充教育信息</p>
       </div>
-      <span class="wf-tag">ComfyUI</span>
-
-	      <span class="wf-tag">IPAdapter</span>
-
-	      <span class="wf-tag">即梦</span>
-
-	      <span class="wf-tag">Suno</span>
-      <span class="wf-note">—— 正在进行中，欢迎关注进度</span>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="section-divider"><span class="d-line"></span><span class="d-gem">&#9670;</span><span class="d-line"></span></div>
-
-<!-- SKILLS -->
-<section class="skills" id="skills">
-  <div class="section-inner">
-    <span class="sec-num">03</span>
-    <h2 class="sec-title">技能工具箱</h2>
-    <p class="sec-sub">关键词匹配 HR 筛选第一步，来帮你省时间</p>
-
-    <div class="skill-grid">
-      <div class="skill-col">
-        <h3><span class="col-icon">⚙️</span> AI 工具链</h3>
-        <div class="skill-row">
-          <span class="skill-name">ComfyUI</span>
-          <span class="skill-level-label">熟练</span>
-          <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span>
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">技能</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>食品 / 生物 / 化工</h3>
+          <div class="skill-tags" id="skill-food">
+            <!-- filled by user content -->
+          </div>
         </div>
-        <div class="skill-row">
-          <span class="skill-name">即梦</span>
-          <span class="skill-level-label">熟练</span>
-          <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">ControlNet</span>
-          <span class="skill-level-label">熟练</span>
-          <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">IPAdapter / FaceID</span>
-          <span class="skill-level-label">熟悉</span>
-          <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span></span><span></span></span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Midjourney / Runway</span>
-          <span class="skill-level-label">熟悉</span>
-          <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span></span><span></span></span>
-        </div>
-      </div>
-      <div class="skill-col">
-        <h3><span class="col-icon">🎬</span> 传统后期</h3>
-        <div class="skill-row">
-          <span class="skill-name">剪映</span>
-          <span class="skill-level-label">熟练</span>
-          <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Premiere Pro</span>
-          <span class="skill-level-label">熟练</span>
-          <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">DaVinci Resolve</span>
-          <span class="skill-level-label">了解</span>
-          <span class="skill-dots"><span class="filled"></span><span></span><span></span><span></span></span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Photoshop</span>
-          <span class="skill-level-label">熟悉</span>
-          <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span></span><span></span></span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Blender</span>
-          <span class="skill-level-label">了解</span>
-          <span class="skill-dots"><span class="filled"></span><span></span><span></span><span></span></span>
+        <div class="skill-group">
+          <h3>动画 / AI 创作</h3>
+          <div class="skill-tags" id="skill-animation">
+            <!-- filled by user content -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="section-divider"><span class="d-line"></span><span class="d-gem">&#9670;</span><span class="d-line"></span></div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="section-inner">
-    <span class="sec-num">04</span>
-    <h2 class="sec-title">关于我</h2>
-    <p class="sec-sub">不是"我是谁"，而是"我能为你做什么"</p>
-
-    <p class="about-text">
-      我叫<mark>郭宇</mark>，一个<span class="highlight">正在学习 AI 动画制作</span>的创作者。
-      我能把一段文字变成一个完整的故事画面——从分镜设计到 AI 生成到后期合成，
-      <mark>全链路自己跑通</mark>。
-      作品不多，但每个都有完整的过程记录和可复现的经验。
-    </p>
-
-    <a href="#" class="about-resume" style="opacity:0.5;cursor:not-allowed;">📄 简历 PDF 整理中，即将上线</a>
-  </div>
-</section>
-
-<div class="section-divider"><span class="d-line"></span><span class="d-gem">&#9670;</span><span class="d-line"></span></div>
-
-<!-- LOG -->
-<section class="log" id="log">
-  <div class="section-inner">
-    <span class="sec-num">05</span>
-    <h2 class="sec-title">学习日志</h2>
-    <p class="sec-sub">便签式记录——正在学什么、卡在哪里、怎么出来的</p>
-
-    <div class="log-timeline">
-      <div class="log-entry">
-        <div class="log-date">2026.05 · 进行中</div>
-        <h3>原神长视频：AI角色一致性挑战</h3>
-        <p>1分钟原神短片制作中。最大问题是角色在两帧之间会"变脸"——在试 IPAdapter + FaceID 组合方案。</p>
-        <span class="sticker">—— IPAdapter 参数调了三天，终于有点悟了</span>
+  <section id="works" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">动画作品集</h2>
+      <div class="works-category">
+        <h3>长片（>1分钟）</h3>
+        <div class="works-grid" id="works-long"></div>
       </div>
-
-      <div class="log-entry">
-        <div class="log-date">2026.05</div>
-        <h3>即梦 vs 可灵 动化效果对比</h3>
-        <p>同一关键帧分别用即梦和可灵动化，测试不同工具在画面稳定性上的差异，总结各自适用场景。</p>
-        <span class="sticker">—— 底层逻辑没变，但手感全变了</span>
+      <div class="works-category">
+        <h3>短创意（≤30秒）</h3>
+        <div class="works-grid" id="works-short"></div>
       </div>
-
-      <div class="log-entry">
-        <div class="log-date">2026.03</div>
-        <h3>ComfyUI 工作流从零开始</h3>
-        <p>第一周：完全不知道节点在干吗。第二周：开始理解数据流动。第三周：能自己搭完整管线。</p>
-        <span class="sticker">—— 学习曲线陡峭，但过了坎就通了</span>
-      </div>
-
-      <div class="log-entry">
-        <div class="log-date">2026.02</div>
-        <h3>入坑 AI 动画</h3>
-        <p>看到别人用 AI 做的小动画被震撼到了——开始觉得"自己也许也能做"。</p>
+      <div class="works-category">
+        <h3>风格尝试（~15秒）</h3>
+        <div class="works-grid" id="works-style"></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="section-divider"><span class="d-line"></span><span class="d-gem">&#9670;</span><span class="d-line"></span></div>
-
-<!-- THOUGHTS -->
-<section class="thoughts" id="thoughts">
-  <div class="section-inner">
-    <span class="sec-num">06</span>
-    <h2 class="sec-title">我对 AI + 动画的看法</h2>
-    <p class="sec-sub">不是权威观点，是正在实践中形成的判断</p>
-
-    <div class="thought-card">
-      <h3>AI 不会替代动画师——但会替代"只会照着做"的动画师</h3>
-      <p>工具在变，但讲好一个故事的能力没变。AI 让技术门槛大幅降低，这让"审美判断"和"叙事能力"变成了更核心的竞争力。决定一个画面好不好的，最终还是你的眼睛和品味。</p>
-      <span class="th-author">—— 郭宇，在实践中</span>
+  <section id="creative" class="section">
+    <div class="container">
+      <h2 class="section-title">创意合集</h2>
+      <div class="creative-grid" id="creative-grid">
+        <!-- loaded from data/creative.json -->
+      </div>
     </div>
+  </section>
 
-    <div class="thought-card">
-      <h3>"能复现"比"做出来了"重要十倍</h3>
-      <p>AI 动画最大的陷阱是：一次偶然的好结果不代表什么。招聘方需要知道你能稳定产出。所以我把每个项目的过程都记录下来——参数怎么调的、哪里卡住了、怎么解决的——这些才是真正可迁移的经验。</p>
-      <span class="th-author">—— 郭宇，在实践中</span>
+  <section id="learning" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">学习记录</h2>
+      <div class="learning-list" id="learning-list">
+        <!-- loaded from data/learning.json -->
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="section-divider"><span class="d-line"></span><span class="d-gem">&#9670;</span><span class="d-line"></span></div>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="section-inner">
-    <span class="sec-num">07</span>
-    <h2 class="sec-title">联系我</h2>
-    <p class="sec-sub">如果你在做 AI 动画相关内容，我们可以聊聊</p>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>联系方式</h3>
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">联系方式</h2>
+      <div class="contact-content">
+        <p class="contact-status">正在寻找工作机会</p>
         <div class="contact-links">
-          <span class="contact-link"><span class="c-icon">📱</span> 19546159322</span>
-          <span class="contact-link"><span class="c-icon">💬</span> 微信：19546159322</span>
-          <a href="#" class="contact-link"><span class="c-icon">📺</span> Bilibili（整理中）</a>
-          <a href="#" class="contact-link"><span class="c-icon">🐙</span> GitHub（整理中）</a>
+          <!-- email, wechat, bilibili links -->
         </div>
       </div>
-      <div class="contact-card">
-        <div class="contact-status">🔍 正在寻找 AI 动画/视频创意岗位</div>
-        <p>如果你觉得这个网站有趣，<br>我们可以约个时间聊聊</p>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="f-divider"></div>
-  &copy; 2026 郭宇 · 自己动手搭的
-</footer>
+  <footer>
+    <p>&copy; 2026 郭宇</p>
+  </footer>
 
-<script>
-// ============ INTERSECTION OBSERVER ============
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('section').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-  observer.observe(el);
-});
-
-document.querySelector('.hero').style.opacity = '1';
-document.querySelector('.hero').style.transform = 'none';
-
-// ============ SHOWREEL CLICK ============
-document.querySelectorAll('.showreel-card').forEach(card => {
-  card.addEventListener('click', function(){
-    const bvid = this.dataset.bvid;
-    const player = document.getElementById('main-player');
-    // Remove active class from all cards, add to clicked
-    document.querySelectorAll('.showreel-card').forEach(c => c.classList.remove('active'));
-    this.classList.add('active');
-
-    if (bvid) {
-      player.innerHTML = `<iframe
-        src="//player.bilibili.com/player.html?bvid=${bvid}&page=1&autoplay=1&high_quality=1"
-        scrolling="no" frameborder="0" framespacing="0" allowfullscreen="true"
-        style="width:100%;height:100%;border:none;"
-        title="${this.dataset.title}">
-      </iframe>`;
-    } else {
-      player.innerHTML = `<div class="vp-inner">
-        <p style="font-size:2.5rem;">🎬</p>
-        <p style="font-family:var(--serif);font-size:1.15rem;font-weight:700;">${this.dataset.title}</p>
-        <p style="font-size:0.8rem;color:var(--text3);">${this.dataset.time} · ${this.dataset.tools}</p>
-        <p style="font-size:0.65rem;color:var(--text4);margin-top:8px;">视频即将上传B站，敬请期待</p>
-      </div>`;
-    }
-  });
-});
-
-// ============ SMOOTH SCROLL ============
-document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target){
-      const navHeight = document.querySelector('nav').offsetHeight;
-      const y = target.getBoundingClientRect().top + window.scrollY - navHeight - 10;
-      window.scrollTo({top: y, behavior: 'smooth'});
-    }
-  });
-});
-
-// ============ CURSOR GLOW ============
-const glow = document.createElement('div');
-glow.className = 'cursor-glow';
-document.body.appendChild(glow);
-const gs = document.createElement('style');
-gs.textContent = `.cursor-glow{position:fixed;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(255,241,118,.08) 0%,transparent 70%);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:opacity .4s;opacity:0}body:hover .cursor-glow{opacity:1}`;
-document.head.appendChild(gs);
-document.addEventListener('mousemove', e => {
-  requestAnimationFrame(() => { glow.style.left = e.clientX+'px'; glow.style.top = e.clientY+'px'; });
-});
-
-// ============ ACTIVE NAV ============
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a[href^="#"]');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 160) current = s.id; });
-  navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current ? '#2C2416' : '#8C7A6B';
-  });
-});
-</script>
+  <script src="js/main.js"></script>
 </body>
 </html>
