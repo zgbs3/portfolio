@@ -76,16 +76,17 @@ body{
     <div class="sub">AI 动画创作者 — 独立完成全流程</div>
   </div>
   <div class="info">
-    济南 · 19546159322 · 2042399981@qq.com
+    济南 · 19546159322<br>
+    B站：晓曦嘻嘻嘻
   </div>
 </div>
 
 <div class="sec">
   <h2>关于我</h2>
   <p style="font-size:0.78rem;line-height:1.7;color:#5C4F3F">
-    独立完成 AI 动画全流程——从文本生成、AI 出图、图生视频到配音剪辑。
-    能搭 ComfyUI 工作流，会调 ControlNet，用过多家 AI 模型对比选优。
-    不满足于"出片就行"，主动测试 AI 能力边界：故意不参考原片设置，看差距在哪，再逐个补。
+    从零自学 AI 动画。能搭 ComfyUI 工作流，会用 ControlNet 控图，了解即梦/可灵/RunningHub 等工具各自擅长的场景。
+    做过 2 分半完整短片，踩过大量坑，每个坑补一个技能。现在在攻克更长叙事和角色一致性。
+    专业是酿酒工程，和动画没关系——但自学能力就是从那里锻炼出来的。
   </p>
 </div>
 
@@ -105,17 +106,17 @@ body{
   <div class="proj">
     <div class="pj-top"><strong>环太平洋 · AI 短片</strong><span class="pj-meta">2'30" · 耗时约两周</span></div>
     <div class="pj-desc">
-      从零开始，故意不参考原电影——先看 AI 能做到什么程度，再看差距在哪。融合了一点战锤40K的风格。
-      Gemini 文本 → ComfyUI 无线画布出图+高清修复 → 即梦生成视频 → 补帧 → RunningHub 配音 → PR 剪辑。
-      第一版效果不理想，故事、光影、声音每个环节都暴露了问题。但每个问题都是一次学习：画面造型怎么优化、光影怎么调、声音怎么对准画面。下一版已经在规划。
+      从零开始，第一步故意不参考原电影设置，先看 AI 能做到什么程度，再看差距在哪。
+      ComfyUI 搭无线画布+高清修复补帧管线 → Image2 出图 → Gemini 生成文本 → RunningHub 配音 → Suno 配乐 → PR 剪辑。
+      故事、建模、光影、声音每个环节都出过问题，逐一尝试、逐一改进。最后跑通，上线 B站。
     </div>
-    <div class="pj-tools"><span>Gemini</span><span>ComfyUI</span><span>即梦</span><span>RunningHub</span><span>PR</span></div>
+    <div class="pj-tools"><span>ComfyUI</span><span>Image2</span><span>Gemini</span><span>RunningHub</span><span>Suno</span><span>PR</span></div>
   </div>
 
   <div class="proj">
     <div class="pj-top"><strong>虚构产品广告</strong><span class="pj-meta">30s</span></div>
     <div class="pj-desc">
-      为一个现实中不存在的产品做一支广告。自己定产品、写叙事、Midjourney 出关键帧、即梦/可灵动化、PR 剪辑。证明能从创意文案到成片独立完成。
+      为一个现实中不存在的产品做一支广告。自己定产品、写叙事、Midjourney 出 Keyframe、即梦/可灵动化、PR 剪辑。证明能从创意文案到成片独立完成。
     </div>
     <div class="pj-tools"><span>Midjourney</span><span>即梦</span><span>可灵</span><span>PR</span></div>
   </div>
@@ -130,8 +131,8 @@ body{
 
   <div class="proj">
     <div class="pj-top"><strong>原神 · AI 动画</strong><span class="pj-meta">1min · 制作中</span></div>
-    <div class="pj-desc">挑战更长叙事和角色一致性。正在解决分镜节奏和 AI 画面连贯性问题。Suno 生成配乐。</div>
-    <div class="pj-tools"><span>ComfyUI</span><span>IPAdapter</span><span>即梦</span><span>Suno</span></div>
+    <div class="pj-desc">挑战更长叙事和角色一致性。正在解决分镜节奏和 AI 画面连贯性问题。</div>
+    <div class="pj-tools"><span>ComfyUI</span><span>IPAdapter</span><span>即梦</span></div>
   </div>
 </div>
 

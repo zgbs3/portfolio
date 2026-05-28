@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>郭宇 — AI 动画创作者</title>
+<title>郭宇 — 品牌内容与视频</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,21 +20,18 @@ body{
 .inner{padding:24px 32px}
 .top-rule{height:2px;background:#2C2416;margin-bottom:0}
 
-/* Header */
 .hdr{display:flex;justify-content:space-between;align-items:start;padding:18px 0 12px;border-bottom:1px solid #D4C8AD}
 .hdr h1{font-family:'Noto Serif SC',serif;font-size:1.5rem;font-weight:900;letter-spacing:0.05em}
 .hdr .sub{font-size:0.8rem;color:#8C7A6B;margin-top:3px}
 .hdr .info{text-align:right;font-size:0.72rem;color:#5C4F3F;line-height:1.8}
 
-/* Section */
 .sec{padding:14px 0;border-bottom:1px dotted #D4C8AD}
 .sec:last-child{border-bottom:none}
 .sec h2{font-family:'Noto Serif SC',serif;font-size:0.88rem;font-weight:700;margin-bottom:8px;letter-spacing:0.03em}
 
-/* Skills — inline rows */
 .skills{margin-bottom:6px}
 .skills .sk-row{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:5px}
-.skills .sk-label{font-size:0.7rem;color:#B8A88A;white-space:nowrap;min-width:48px;font-weight:500}
+.skills .sk-label{font-size:0.7rem;color:#B8A88A;white-space:nowrap;min-width:56px;font-weight:500}
 .skills .sk-label::after{content:'：'}
 .skills .sk-item{
   font-size:0.7rem;padding:2px 7px;font-family:'Fira Code',monospace;
@@ -42,7 +39,6 @@ body{
 }
 .skills .sk-item.k{background:#FFF9C4;border-color:#F4D758;font-weight:500}
 
-/* Projects */
 .proj{margin-bottom:10px;padding:8px 14px;background:#FDFCF7;border:1px solid #EBE5D5}
 .proj:last-child{margin-bottom:0}
 .proj .pj-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px}
@@ -52,7 +48,6 @@ body{
 .proj .pj-tools{margin-top:5px;display:flex;flex-wrap:wrap;gap:4px}
 .proj .pj-tools span{font-size:0.64rem;padding:1px 7px;font-family:'Fira Code',monospace;background:#2C2416;color:#EBE5D5}
 
-/* Bottom */
 .foot{display:flex;justify-content:space-between;align-items:center;padding:12px 0 4px;font-size:0.72rem;color:#8C7A6B}
 .foot .pill{background:#FFF9C4;padding:3px 10px;font-weight:500;font-size:0.68rem}
 
@@ -73,79 +68,74 @@ body{
 <div class="hdr">
   <div>
     <h1>郭宇</h1>
-    <div class="sub">AI 动画创作者 — 独立完成全流程</div>
+    <div class="sub">酿酒工程 · 会做视频 · 2026届</div>
   </div>
   <div class="info">
-    济南 · 19546159322 · 2042399981@qq.com
+    济南 · 19546159322<br>
+    zgbs3.github.io/portfolio<br>
+    B站：晓曦嘻嘻嘻
   </div>
+</div>
+
+<div class="sec">
+  <h2>求职方向</h2>
+  <p style="font-size:0.78rem;line-height:1.7;color:#5C4F3F">
+    品牌策划 / 视频制作 / 新媒体内容。酒类、食品、饮料行业优先——因为真懂产品。
+  </p>
 </div>
 
 <div class="sec">
   <h2>关于我</h2>
   <p style="font-size:0.78rem;line-height:1.7;color:#5C4F3F">
-    独立完成 AI 动画全流程——从文本生成、AI 出图、图生视频到配音剪辑。
-    能搭 ComfyUI 工作流，会调 ControlNet，用过多家 AI 模型对比选优。
-    不满足于"出片就行"，主动测试 AI 能力边界：故意不参考原片设置，看差距在哪，再逐个补。
+    四年酿酒工程，系统学过从原料到成品的全流程。同时花了大量课余时间自学视频制作——能独立完成 AI 出图、动化、配音、剪辑。酿酒和做视频看起来不沾边，但都需要<strong>耐心、细节和反复试错</strong>。品牌团队里，我是那个不需要别人解释产品、自己就能动手做内容的人。
   </p>
 </div>
 
 <div class="sec">
   <h2>技能</h2>
   <div class="skills">
-    <div class="sk-row"><span class="sk-label">AI出图</span><span class="sk-item k">ComfyUI</span><span class="sk-item k">ControlNet</span><span class="sk-item k">Midjourney</span><span class="sk-item">IPAdapter</span><span class="sk-item">Image2</span><span class="sk-item">Banana</span></div>
-    <div class="sk-row"><span class="sk-label">AI视频</span><span class="sk-item k">即梦</span><span class="sk-item k">可灵</span><span class="sk-item k">RunningHub</span><span class="sk-item">ComfyUI工作流</span></div>
-    <div class="sk-row"><span class="sk-label">剪辑后期</span><span class="sk-item k">Premiere</span><span class="sk-item k">剪映</span><span class="sk-item">Suno配乐</span><span class="sk-item">AI配音</span></div>
-    <div class="sk-row"><span class="sk-label">文本</span><span class="sk-item k">Gemini</span><span class="sk-item">Claude</span><span class="sk-item">GPT</span><span class="sk-item">DeepSeek</span></div>
+    <div class="sk-row"><span class="sk-label">视频制作</span><span class="sk-item k">Premiere</span><span class="sk-item k">剪映</span><span class="sk-item">Suno配乐</span><span class="sk-item">AI配音</span></div>
+    <div class="sk-row"><span class="sk-label">AI视频</span><span class="sk-item k">即梦</span><span class="sk-item k">可灵</span><span class="sk-item k">RunningHub</span><span class="sk-item">ComfyUI</span><span class="sk-item">Midjourney</span></div>
+    <div class="sk-row"><span class="sk-label">行业知识</span><span class="sk-item k">酿酒工艺</span><span class="sk-item k">食品科学</span><span class="sk-item">发酵工程</span></div>
   </div>
 </div>
 
 <div class="sec">
-  <h2>项目</h2>
+  <h2>视频案例</h2>
 
   <div class="proj">
-    <div class="pj-top"><strong>环太平洋 · AI 短片</strong><span class="pj-meta">2'30" · 耗时约两周</span></div>
+    <div class="pj-top"><strong>环太平洋 · 品牌风格短片</strong><span class="pj-meta">2'30"</span></div>
     <div class="pj-desc">
-      从零开始，故意不参考原电影——先看 AI 能做到什么程度，再看差距在哪。融合了一点战锤40K的风格。
-      Gemini 文本 → ComfyUI 无线画布出图+高清修复 → 即梦生成视频 → 补帧 → RunningHub 配音 → PR 剪辑。
-      第一版效果不理想，故事、光影、声音每个环节都暴露了问题。但每个问题都是一次学习：画面造型怎么优化、光影怎么调、声音怎么对准画面。下一版已经在规划。
+      从零完成一支电影级画面短片——策划、AI 出图、动化、配音、配乐、剪辑全流程。一个人搞定，不需要外包。同等方法可用于品牌故事片、产品氛围视频，降低内容制作成本。已上线 B站。
     </div>
-    <div class="pj-tools"><span>Gemini</span><span>ComfyUI</span><span>即梦</span><span>RunningHub</span><span>PR</span></div>
+    <div class="pj-tools"><span>ComfyUI</span><span>即梦/可灵</span><span>PR</span><span>Suno</span></div>
   </div>
 
   <div class="proj">
     <div class="pj-top"><strong>虚构产品广告</strong><span class="pj-meta">30s</span></div>
     <div class="pj-desc">
-      为一个现实中不存在的产品做一支广告。自己定产品、写叙事、Midjourney 出关键帧、即梦/可灵动化、PR 剪辑。证明能从创意文案到成片独立完成。
+      为一个不存在的产品做广告——从产品定位、叙事设计到画面制作、剪辑成片。展示从创意到成品的独立落地能力，适合新品上市概念视频、品牌创意提案。
     </div>
-    <div class="pj-tools"><span>Midjourney</span><span>即梦</span><span>可灵</span><span>PR</span></div>
+    <div class="pj-tools"><span>Midjourney</span><span>即梦</span><span>PR</span></div>
   </div>
 
   <div class="proj">
     <div class="pj-top"><strong>短视频系列</strong><span class="pj-meta">3×15s</span></div>
-    <div class="pj-desc">
-      动画场景还原、小说道具复现等不同主题，练不同工具组合，积累快节奏素材经验。
-    </div>
-    <div class="pj-tools"><span>ComfyUI</span><span>即梦</span><span>可灵</span><span>剪映</span></div>
-  </div>
-
-  <div class="proj">
-    <div class="pj-top"><strong>原神 · AI 动画</strong><span class="pj-meta">1min · 制作中</span></div>
-    <div class="pj-desc">挑战更长叙事和角色一致性。正在解决分镜节奏和 AI 画面连贯性问题。Suno 生成配乐。</div>
-    <div class="pj-tools"><span>ComfyUI</span><span>IPAdapter</span><span>即梦</span><span>Suno</span></div>
+    <div class="pj-desc">动画场景、道具复现等多元主题，验证不同工具在抖音/快手/视频号等平台的产出效果。</div>
+    <div class="pj-tools"><span>ComfyUI</span><span>剪映</span><span>即梦</span></div>
   </div>
 </div>
 
 <div class="sec">
   <h2>教育</h2>
-  <p style="font-size:0.78rem;color:#5C4F3F">
+  <p style="font-size:0.78rem;color:#5C4F3F;line-height:1.6">
     <strong>齐鲁工业大学</strong> · 酿酒工程 · 本科 · 2026届
-    <span style="color:#B8A88A;margin-left:8px">（跨专业自学 AI 动画）</span>
   </p>
 </div>
 
 <div class="foot">
   <span class="pill">正在找工作 — 随时到岗</span>
-  <span>作品集在线可看 · 视频当面可播</span>
+  <span>作品集在线 · 接受出差</span>
 </div>
 
 </div>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>郭宇 — AIGC 动画师</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Noto Sans SC','Inter',sans-serif;
+  color:#2C2416;background:#F5F0E5;
+  -webkit-font-smoothing:antialiased;
+}
+.page{
+  max-width:780px;margin:24px auto;background:#FFF;
+  box-shadow:0 2px 16px rgba(0,0,0,.06);
+}
+.inner{padding:32px 40px}
+.top-bar{height:3px;background:#FFF176}
+
+.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.header h1{font-family:'Noto Serif SC',serif;font-size:1.6rem;font-weight:900;letter-spacing:0.04em}
+.header .sub{font-size:0.78rem;color:#8C7A6B;margin-top:2px}
+.header .contact{text-align:right;font-size:0.72rem;color:#5C4F3F;line-height:1.7}
+.header .contact a{color:#5C4F3F;text-decoration:none}
+
+.sec{margin-bottom:14px}
+.sec-title{
+  font-family:'Noto Serif SC',serif;font-size:0.85rem;font-weight:700;
+  padding-bottom:4px;margin-bottom:8px;
+  border-bottom:1.2px solid #2C2416;
+  letter-spacing:0.02em;
+}
+.sec-title .en{font-size:0.65rem;color:#8C7A6B;font-weight:400;margin-left:6px;font-family:'Noto Sans SC',sans-serif}
+
+.skill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.skill-row .cat{font-size:0.68rem;color:#B8A88A;white-space:nowrap;font-weight:500;min-width:52px}
+.skill-tag{
+  font-size:0.7rem;padding:2px 7px;
+  background:#FBF9F1;border:1px solid #EBE5D5;
+  font-family:'Fira Code','Consolas',monospace;
+}
+.skill-tag.star{background:#FFF176;border-color:#F4D758}
+
+.project{margin-bottom:10px;padding-left:12px;border-left:2px solid #EBE5D5}
+.project-header{display:flex;justify-content:space-between;align-items:baseline}
+.project-header h3{font-size:0.84rem;font-weight:700}
+.project-header .meta{font-size:0.68rem;color:#8C7A6B;font-family:'Fira Code',monospace;white-space:nowrap}
+.project .desc{font-size:0.76rem;color:#5C4F3F;margin-top:3px;line-height:1.55}
+.project .tools{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.project .tools span{
+  font-size:0.65rem;padding:1px 6px;
+  background:#FBF9F1;color:#5C4F3F;
+  font-family:'Fira Code',monospace;
+}
+
+.edu-item{display:flex;justify-content:space-between;align-items:baseline}
+.edu-item h3{font-size:0.82rem;font-weight:700}
+.edu-item .date{font-size:0.7rem;color:#8C7A6B;font-family:'Fira Code',monospace}
+.edu-item .detail{font-size:0.76rem;color:#5C4F3F;margin-top:1px}
+
+.portfolio-link{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 14px;margin-top:4px;
+  background:#2C2416;color:#FBF9F1;
+  text-decoration:none;font-size:0.76rem;font-weight:500;
+  font-family:'Fira Code',monospace;
+}
+.status-badge{
+  display:inline-block;padding:3px 10px;
+  font-size:0.7rem;background:#FFF176;
+  font-weight:500;
+}
+
+@media print{
+  body{background:#FFF}
+  .page{box-shadow:none;margin:0;max-width:100%}
+  .inner{padding:28px 32px}
+  .top-bar{background:#2C2416}
+  .skill-tag.star{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top-bar"></div>
+  <div class="inner">
+
+    <div class="header">
+      <div>
+        <h1>郭宇</h1>
+        <div class="sub">AI 动画创作者 · 全流程独立制作</div>
+      </div>
+      <div class="contact">
+        济南 · <a href="tel:19546159322">19546159322</a><br>
+        <a href="https://zgbs3.github.io/portfolio/">zgbs3.github.io/portfolio</a><br>
+        B站：晓曦嘻嘻嘻
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">个人定位<span class="en">Profile</span></div>
+      <p style="font-size:0.8rem;line-height:1.6;color:#5C4F3F">
+        独立完成 AI 动画全流程——从文本生成、AI 出图、图生视频到配音剪辑。
+        能搭 ComfyUI 工作流，会调 ControlNet，用过多家 AI 模型对比选优。
+        不满足于"出片就行"，主动测试 AI 能力边界：故意不参考原片设置，看差距在哪，再逐个补。
+      </p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">技能工具<span class="en">Skills</span></div>
+      <div class="skill-row">
+        <span class="cat">文案</span>
+        <span class="skill-tag star">Gemini</span>
+        <span class="skill-tag">Claude</span>
+        <span class="skill-tag">GPT</span>
+        <span class="skill-tag">DeepSeek</span>
+      </div>
+      <div class="skill-row">
+        <span class="cat">出图</span>
+        <span class="skill-tag star">ComfyUI</span>
+        <span class="skill-tag star">ControlNet</span>
+        <span class="skill-tag star">Midjourney</span>
+        <span class="skill-tag">Image2</span>
+        <span class="skill-tag">Banana</span>
+        <span class="skill-tag">IPAdapter</span>
+      </div>
+      <div class="skill-row">
+        <span class="cat">视频</span>
+        <span class="skill-tag star">即梦</span>
+        <span class="skill-tag star">可灵</span>
+        <span class="skill-tag star">RunningHub</span>
+        <span class="skill-tag">ComfyUI工作流</span>
+      </div>
+      <div class="skill-row">
+        <span class="cat">后期</span>
+        <span class="skill-tag star">Premiere Pro</span>
+        <span class="skill-tag star">剪映</span>
+        <span class="skill-tag">Suno配乐</span>
+        <span class="skill-tag">AI配音</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">项目经历<span class="en">Projects</span></div>
+
+      <div class="project">
+        <div class="project-header">
+          <h3>环太平洋 · AI 模仿短片</h3>
+          <span class="meta">2'30" · 独立创作 · 耗时 10+ 天</span>
+        </div>
+        <div class="desc">
+          从零创作，主动不参考原电影设定，测试 AI 能力上限。工作流：ComfyUI 搭建无线画布 + 高清修复补帧管线 → Image2 出图 → Gemini 生成文本 → RunningHub 配音 → PR/剪映剪辑。故事地点、建模、光影、声音等环节均遇到问题，逐项学习改进。
+        </div>
+        <div class="tools"><span>ComfyUI</span><span>Image2</span><span>Gemini</span><span>RunningHub</span><span>PR</span><span>Suno</span></div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <h3>创意产品介绍 · 虚构产品广告</h3>
+          <span class="meta">30s · 独立创作</span>
+        </div>
+        <div class="desc">
+          构想一个现实中不存在的产品，从产品定位到叙事到画面全盘设计。Midjourney 出 Keyframe → 即梦/可灵动化 → PR 剪辑成片。证明能独立完成从创意到成品的商业视频制作。
+        </div>
+        <div class="tools"><span>Midjourney</span><span>即梦</span><span>可灵</span><span>PR</span></div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <h3>短视频系列 · 多风格实验</h3>
+          <span class="meta">3×15s · 独立创作</span>
+        </div>
+        <div class="desc">
+          动画场景还原、小说道具复现等不同主题。探索不同 AI 工具组合的产出效果，积累风格化经验。
+        </div>
+        <div class="tools"><span>ComfyUI</span><span>即梦</span><span>可灵</span><span>剪映</span></div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <h3>原神 · AI 动画短片</h3>
+          <span class="meta">1min · 制作中</span>
+        </div>
+        <div class="desc">挑战更长叙事和角色一致性，正在攻克分镜节奏和 AI 画面连贯性。</div>
+        <div class="tools"><span>ComfyUI</span><span>IPAdapter</span><span>即梦</span></div>
+      </div>
+
+      <div style="text-align:center;margin-top:8px">
+        <a class="portfolio-link" href="https://zgbs3.github.io/portfolio/" target="_blank">▶ 作品集：zgbs3.github.io/portfolio</a>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">教育背景<span class="en">Education</span></div>
+      <div class="edu-item">
+        <div>
+          <h3>齐鲁工业大学 · 酿酒工程</h3>
+          <div class="detail">本科 · 2026届</div>
+        </div>
+        <span class="date">2022 — 2026</span>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;padding-top:12px;border-top:1px solid #EBE5D5">
+      <span class="status-badge">正在找工作</span>
+      <span style="font-size:0.72rem;color:#8C7A6B;margin-left:8px">AI动画 / 视频创意 · 济南/青岛/可沟通</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
