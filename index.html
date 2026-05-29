@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>郭宇 · 个人主页</title>
   <meta name="description" content="永远热情，永远追逐。从山西到酿酒工程，从AI到动画创作。">
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:title" content="郭宇 · 个人主页">
+  <meta property="og:description" content="永远热情，永远追逐。从酿酒工程到AI动画创作——热爱是唯一的导航。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=4">
@@ -116,17 +121,36 @@
       <div class="contact-content reveal">
         <p class="contact-status">正在寻找工作机会</p>
         <div class="contact-links">
-          <a class="contact-link" href="tel:18835238164">📞 18835238164</a>
-          <span class="contact-link">💬 微信：18835238164</span>
+          <button class="contact-link" data-copy="18835238164">
+            <span class="contact-link-icon">📞</span>
+            <span>18835238164</span>
+            <span class="contact-copy-hint">点击复制</span>
+          </button>
+          <button class="contact-link" data-copy="18835238164">
+            <span class="contact-link-icon">💬</span>
+            <span>微信：18835238164</span>
+            <span class="contact-copy-hint">点击复制</span>
+          </button>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 郭宇</p>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="works.html">作品</a>
+        <a href="creative.html">创意</a>
+        <a href="learning.html">学习</a>
+        <a href="#contact">联系</a>
+      </div>
+      <p class="footer-tagline">永远热情，永远追逐。</p>
+      <p class="footer-copy">&copy; 2026 郭宇</p>
+    </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <div class="toast" id="copy-toast">✓ 已复制到剪贴板</div>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

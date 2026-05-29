@@ -83,4 +83,52 @@
     };
   })();
 
+  // ============================================
+  // Copy to clipboard for contact info
+  // ============================================
+  (function() {
+    var toast = document.getElementById('copy-toast');
+    if (!toast) return;
+
+    var timer = null;
+
+    function showToast() {
+      if (timer) clearTimeout(timer);
+      toast.classList.add('toast-show');
+      timer = setTimeout(function() {
+        toast.classList.remove('toast-show');
+      }, 2000);
+    }
+
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-copy]');
+      if (!btn) return;
+
+      var text = btn.getAttribute('data-copy');
+      if (!text) return;
+
+      // Try modern clipboard API first, fall back to execCommand
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showToast();
+        }).catch(function() {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+
+      function fallbackCopy(str) {
+        var ta = document.createElement('textarea');
+        ta.value = str;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); showToast(); } catch(e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  })();
+
 })();
