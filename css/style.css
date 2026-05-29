@@ -328,7 +328,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(253, 246, 240, 0.8);
+  background: rgba(253, 246, 240, 0.5);
   border-radius: inherit;
 }
 
@@ -804,6 +804,7 @@ body::before {
 
 .entry-featured .entry-body h3 {
   font-size: 1.35rem;
+  color: #1a1208;
 }
 
 .entry-accent-bar {
@@ -906,14 +907,14 @@ body::before {
 .entry-body h3 {
   font-family: var(--font-serif);
   font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--text);
+  font-weight: 700;
+  color: #1a1208;
   margin-bottom: 4px;
 }
 
 .entry-body p {
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: #5c4a3b;
   line-height: 1.65;
   margin-bottom: 8px;
 }
