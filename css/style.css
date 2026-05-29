@@ -313,52 +313,39 @@ body::before {
   padding: 64px 24px;
 }
 
-/* Entry card backgrounds */
-.entry-works {
-  background-image: url('../images/bg-works.png');
-  background-size: cover;
-  background-position: center;
+/* Section-level backgrounds for entry cards */
+.section-bg-works {
+  background: url('../images/bg-works.png') center/cover no-repeat;
 }
 
-.entry-creative {
-  background-image: url('../images/bg-creative.png');
-  background-size: cover;
-  background-position: center;
+.section-bg-creative {
+  background: url('../images/bg-creative.png') center/cover no-repeat;
 }
 
-.entry-learning {
-  background-image: url('../images/bg-learning.png');
-  background-size: cover;
-  background-position: center;
+.section-bg-learning {
+  background: url('../images/bg-learning.png') center/cover no-repeat;
 }
 
-.entry-works,
-.entry-creative,
-.entry-learning {
-  border: 1px solid rgba(180,83,9,0.08);
+/* Wrapper adds readable overlay between section background and card */
+.section-entry-wrapper {
+  position: relative;
+  border-radius: 14px;
 }
 
-/* Text shield: semi-transparent overlay so text is readable over background */
-.entry-works::before,
-.entry-creative::before,
-.entry-learning::before {
+.section-entry-wrapper::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(253, 246, 240, 0.75);
+  background: rgba(253, 246, 240, 0.82);
   border-radius: inherit;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
-.entry-works > *,
-.entry-creative > *,
-.entry-learning > * {
+.section-entry-wrapper .section-entry {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
-
-/* Two-column row for side-by-side cards (kept for other uses) */
 .entry-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
