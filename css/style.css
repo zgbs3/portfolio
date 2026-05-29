@@ -317,6 +317,31 @@ body::before {
   position: relative;
 }
 
+/* Entry card backgrounds */
+.entry-works {
+  background-image: url('../images/bg-works.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.entry-creative {
+  background-image: url('../images/bg-creative.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.entry-learning {
+  background-image: url('../images/bg-learning.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.entry-works,
+.entry-creative,
+.entry-learning {
+  border: 1px solid rgba(180,83,9,0.1);
+}
+
 .section-alt::before {
   content: '';
   position: absolute;
