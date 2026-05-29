@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>创意合集 · 郭宇</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="sub-page">
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-back" href="index.html">← 返回主页</a>
+      <span class="nav-logo">GY</span>
+      <span class="nav-spacer"></span>
+    </div>
+  </nav>
+
+  <section class="section sub-hero">
+    <div class="container">
+      <h1 class="sub-title">创意合集</h1>
+      <p class="sub-desc">创作灵感、视觉实验、个人项目的汇集地。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="creative-grid" id="creative-grid">
+        <p style="color:var(--text-secondary);grid-column:1/-1;">创意内容即将上线...</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 郭宇</p>
+  </footer>
+
+  <script>
+    (function() {
+      fetch('data/creative.json')
+        .then(function(res) { return res.json(); })
+        .then(function(items) {
+          var grid = document.getElementById('creative-grid');
+          if (!grid || !items || items.length === 0) return;
+          grid.innerHTML = items.map(function(item) {
+            var div = document.createElement('div');
+            return '<div class="creative-card">' +
+              (item.image ? '<img src="' + esc(item.image) + '" alt="' + esc(item.title) + '" loading="lazy">' : '') +
+              '<div class="creative-card-body">' +
+              '<h4>' + esc(item.title) + '</h4>' +
+              '<p>' + esc(item.description) + '</p>' +
+              (item.date ? '<div class="date">' + esc(item.date) + '</div>' : '') +
+              '</div></div>';
+          }).join('');
+        })
+        .catch(function(err) { console.error(err); });
+
+      function esc(s) {
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(s));
+        return d.innerHTML;
+      }
+    })();
+  </script>
+
+</body>
+</html>

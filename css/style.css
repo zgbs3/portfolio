@@ -519,219 +519,75 @@ body {
 }
 
 /* ============================================
-   Modal / Detail View
+   Sub-page styles
    ============================================ */
 
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(44, 36, 22, 0.7);
-  backdrop-filter: blur(6px);
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
+.sub-page {
+  padding-top: var(--nav-height);
 }
 
-.modal-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
+.sub-hero {
+  padding: 48px 24px 24px;
+  text-align: center;
 }
 
-.modal-container {
-  background: var(--bg);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  max-width: 720px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  transform: translateY(20px);
-  transition: transform 0.3s;
-}
-
-.modal-overlay.active .modal-container {
-  transform: translateY(0);
-}
-
-.modal-close {
-  position: sticky;
-  top: 8px;
-  float: right;
-  width: 36px;
-  height: 36px;
-  border: none;
-  background: rgba(0,0,0,0.05);
-  border-radius: 50%;
-  font-size: 1.3rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-  margin: 8px 8px 0 0;
-}
-
-.modal-close:hover {
-  background: rgba(0,0,0,0.1);
-  color: var(--text);
-}
-
-.modal-body {
-  padding: 0 28px 28px;
-}
-
-.modal-body video {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
-  background: #1a1a1a;
-  margin-top: -36px;
-}
-
-.modal-body img {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
-  margin-top: -36px;
-}
-
-.modal-body .modal-title {
+.sub-title {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 6px;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--text);
+  margin-bottom: 8px;
 }
 
-.modal-body .modal-meta {
-  font-size: 0.85rem;
+.sub-desc {
+  font-size: 1rem;
   color: var(--text-secondary);
-  margin-bottom: 14px;
-}
-
-.modal-body .modal-desc {
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.9;
-}
-
-.modal-body .modal-date {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--divider);
-}
-
-/* ============================================
-   Expandable Learning Items
-   ============================================ */
-
-.learning-item {
-  cursor: pointer;
-  user-select: none;
-  position: relative;
-  padding-right: 48px !important;
-}
-
-.learning-item .expand-icon {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  transition: transform 0.3s;
-  line-height: 1;
-}
-
-.learning-item.expanded .expand-icon {
-  transform: rotate(180deg);
-}
-
-.learning-item .solution-wrap {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.4s ease, margin-top 0.4s ease;
-}
-
-.learning-item.expanded .solution-wrap {
-  max-height: 600px;
-  margin-top: 12px;
-}
-
-.learning-item .problem {
-  font-weight: 500;
-  color: var(--accent);
-  margin-bottom: 4px;
-}
-
-.learning-item .solution {
-  color: var(--text);
+  max-width: 480px;
+  margin: 0 auto;
   line-height: 1.8;
 }
 
-.learning-item .solution-date {
-  font-size: 0.8rem;
+.nav-back {
+  text-decoration: none;
   color: var(--text-secondary);
-  margin-top: 8px;
+  font-size: 0.9rem;
+  transition: color 0.2s;
 }
 
-/* click hint */
-.learning-item::after {
-  content: '点击展开';
-  position: absolute;
-  right: 48px;
-  top: 20px;
-  font-size: 0.7rem;
-  color: var(--text-secondary);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.learning-item:hover::after {
-  opacity: 0.5;
-}
-
-.learning-item.expanded::after {
-  content: '点击收起';
-}
-
-/* Works & Creative card click cursor + hint */
-.work-card {
-  cursor: pointer;
-}
-
-.work-card-info {
-  position: relative;
-}
-
-.work-card-info::after {
-  content: '点击查看详情 →';
-  display: inline-block;
-  margin-top: 6px;
-  font-size: 0.75rem;
+.nav-back:hover {
   color: var(--accent);
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity 0.3s, transform 0.3s;
 }
 
-.work-card:hover .work-card-info::after {
-  opacity: 0.7;
-  transform: translateX(0);
+.nav-spacer {
+  width: 60px; /* balance the back link */
 }
 
-.creative-card {
-  cursor: pointer;
+/* View more link */
+.section-more {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.more-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 24px;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.more-link:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Learning items always open on sub-page */
+.learning-item-open .solution {
+  display: block;
 }
 
 /* ============================================
