@@ -313,39 +313,32 @@ body::before {
   padding: 64px 24px;
 }
 
-/* Section-level backgrounds for entry cards */
-.section-bg-works {
-  background: url('../images/bg-works.png') center/cover no-repeat;
-}
-
-.section-bg-creative {
-  background: url('../images/bg-creative.png') center/cover no-repeat;
-}
-
-.section-bg-learning {
-  background: url('../images/bg-learning.png') center/cover no-repeat;
-}
-
-/* Wrapper adds readable overlay between section background and card */
-.section-entry-wrapper {
-  position: relative;
-  border-radius: 14px;
-}
-
-.section-entry-wrapper::before {
-  content: '';
+/* Card background image layer */
+.entry-bg {
   position: absolute;
   inset: 0;
-  background: rgba(253, 246, 240, 0.82);
-  border-radius: inherit;
-  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  z-index: 0;
   pointer-events: none;
 }
 
-.section-entry-wrapper .section-entry {
-  position: relative;
-  z-index: 2;
+.entry-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 246, 240, 0.8);
+  border-radius: inherit;
 }
+
+.entry-visual,
+.entry-body,
+.entry-accent-bar {
+  position: relative;
+  z-index: 1;
+}
+
 .entry-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -760,13 +753,6 @@ body::before {
 /* ============================================
    Section Entry Cards (gateway to sub-pages)
    ============================================ */
-
-/* Two-column row for side-by-side cards */
-.entry-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
 
 .section-entry {
   display: flex;

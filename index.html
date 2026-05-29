@@ -13,7 +13,7 @@
   <meta property="og:locale" content="zh_CN">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=16">
+  <link rel="stylesheet" href="css/style.css?v=17">
 </head>
 <body>
   <nav id="navbar">
@@ -66,31 +66,32 @@
   </section>
 
   <!-- 作品 — 全宽大卡 -->
-  <section id="works" class="section section-bg-works">
+  <!-- 作品 — 全宽大卡 -->
+  <section id="works" class="section">
     <div class="container">
-      <div class="section-entry-wrapper">
-        <a href="works.html" class="section-entry entry-featured reveal">
-          <div class="entry-visual">
-            <div class="entry-icon-circle entry-icon-lg">
-              <div class="entry-icon-shape icon-works"></div>
-            </div>
+      <a href="works.html" class="section-entry entry-featured reveal">
+        <div class="entry-bg" style="background-image: url('images/bg-works.png')"></div>
+        <div class="entry-visual">
+          <div class="entry-icon-circle entry-icon-lg">
+            <div class="entry-icon-shape icon-works"></div>
           </div>
-          <div class="entry-body">
-            <h3>动画作品集</h3>
-            <p>6 部原创动画 · 环太平洋风格、超广角 FPV、AI 生成实验——每一帧都是探索。</p>
-            <span class="entry-arrow">进入查看 <span class="arrow">→</span></span>
-          </div>
-          <div class="entry-accent-bar"></div>
-        </a>
-      </div>
+        </div>
+        <div class="entry-body">
+          <h3>动画作品集</h3>
+          <p>6 部原创动画 · 环太平洋风格、超广角 FPV、AI 生成实验——每一帧都是探索。</p>
+          <span class="entry-arrow">进入查看 <span class="arrow">→</span></span>
+        </div>
+        <div class="entry-accent-bar"></div>
+      </a>
     </div>
   </section>
 
-  <!-- 创意 -->
-  <section id="creative" class="section section-bg-creative">
+  <!-- 创意 + 学习 并排 -->
+  <section id="creative" class="section">
     <div class="container">
-      <div class="section-entry-wrapper">
+      <div class="entry-row">
         <a href="creative.html" class="section-entry reveal">
+          <div class="entry-bg" style="background-image: url('images/bg-creative.png')"></div>
           <div class="entry-visual">
             <div class="entry-icon-circle">
               <div class="entry-icon-shape icon-creative"></div>
@@ -102,15 +103,8 @@
             <span class="entry-arrow">进入查看 <span class="arrow">→</span></span>
           </div>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 学习 -->
-  <section id="learning" class="section section-bg-learning">
-    <div class="container">
-      <div class="section-entry-wrapper">
         <a href="learning.html" class="section-entry reveal">
+          <div class="entry-bg" style="background-image: url('images/bg-learning.png')"></div>
           <div class="entry-visual">
             <div class="entry-icon-circle">
               <div class="entry-icon-shape icon-learning"></div>
@@ -162,6 +156,6 @@
 
   <button id="back-to-top" aria-label="回到顶部">↑</button>
   <div class="toast" id="copy-toast">✓ 已复制到剪贴板</div>
-  <script src="js/main.js?v=16"></script>
+  <script src="js/main.js?v=17"></script>
 </body>
 </html>
