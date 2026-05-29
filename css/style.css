@@ -289,7 +289,6 @@ body::before {
 }
 
 .section-alt {
-  background: var(--bg-alt);
   position: relative;
 }
 
