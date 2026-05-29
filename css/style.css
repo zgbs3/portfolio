@@ -268,16 +268,41 @@ body::before {
 
 .hero-scroll-hint {
   margin-top: 40px;
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  animation: bounce 2s infinite;
-  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.4;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(8px); }
-  60% { transform: translateY(4px); }
+.hero-scroll-hint span {
+  display: block;
+  width: 1px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 1px;
+  animation: scrollLine 2.5s ease-in-out infinite;
+}
+
+.hero-scroll-hint::after {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  animation: scrollChevron 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%, 100% { height: 28px; opacity: 0.6; }
+  50% { height: 14px; opacity: 1; }
+}
+
+@keyframes scrollChevron {
+  0%, 100% { opacity: 0.6; transform: rotate(45deg) translateY(0); }
+  50% { opacity: 1; transform: rotate(45deg) translateY(3px); }
 }
 
 /* ============================================
