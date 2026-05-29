@@ -328,7 +328,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(253, 246, 240, 0.6);
+  background: rgba(253, 246, 240, 0.35);
   border-radius: inherit;
 }
 
@@ -383,6 +383,25 @@ body::before {
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* ============================================
+   About Card (with background)
+   ============================================ */
+
+.about-card {
+  position: relative;
+  border-radius: 14px;
+  padding: 36px 32px;
+  overflow: hidden;
+  background: rgba(253, 246, 240, 0.6);
+}
+
+.about-card .section-title,
+.about-card .about-content,
+.about-card .about-edu {
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================
