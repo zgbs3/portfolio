@@ -292,29 +292,44 @@ body {
   line-height: 2;
 }
 
-.edu-placeholder {
-  text-align: center;
-  color: var(--text-secondary);
+/* Education badge inside about section */
+.about-edu {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 12px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
 }
 
-.edu-item {
-  max-width: 500px;
-}
-
-.edu-item h3 {
+.about-edu-badge {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+  background: rgba(180,83,9,0.08);
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
-.edu-major {
+.about-edu-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.about-edu-text strong {
   font-size: 0.95rem;
+  font-weight: 600;
   color: var(--text);
-  margin-bottom: 2px;
 }
 
-.edu-years {
-  font-size: 0.85rem;
+.about-edu-text span {
+  font-size: 0.82rem;
   color: var(--text-secondary);
 }
 
