@@ -133,6 +133,30 @@
   })();
 
   // ============================================
+  // WeChat QR modal
+  // ============================================
+  (function() {
+    var btn = document.getElementById('btn-wechat');
+    var overlay = document.getElementById('qr-overlay');
+    var close = document.getElementById('qr-close');
+    if (!btn || !overlay || !close) return;
+
+    btn.addEventListener('click', function() {
+      overlay.classList.add('qr-open');
+    });
+
+    close.addEventListener('click', function() {
+      overlay.classList.remove('qr-open');
+    });
+
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.classList.remove('qr-open');
+      }
+    });
+  })();
+
+  // ============================================
   // Copy to clipboard for contact info
   // ============================================
   (function() {

@@ -13,7 +13,7 @@
   <meta property="og:locale" content="zh_CN">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=28">
+  <link rel="stylesheet" href="css/style.css?v=29">
 </head>
 <body>
   <nav id="navbar">
@@ -141,10 +141,10 @@
             <span>18835238164</span>
             <span class="contact-copy-hint">点击复制</span>
           </button>
-          <button class="contact-link" data-copy="18835238164">
+          <button class="contact-link" id="btn-wechat">
             <span class="contact-link-icon">💬</span>
             <span>微信：18835238164</span>
-            <span class="contact-copy-hint">点击复制</span>
+            <span class="contact-copy-hint">点击扫码</span>
           </button>
         </div>
       </div>
@@ -166,7 +166,16 @@
   </footer>
 
   <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <!-- WeChat QR modal -->
+  <div class="qr-overlay" id="qr-overlay">
+    <div class="qr-modal">
+      <div class="qr-close" id="qr-close">&times;</div>
+      <h3>扫码添加微信</h3>
+      <img src="images/wechat-qr.png" alt="微信二维码" class="qr-img">
+      <p class="qr-hint">打开微信扫一扫</p>
+    </div>
+  </div>
   <div class="toast" id="copy-toast">✓ 已复制到剪贴板</div>
-  <script src="js/main.js?v=28"></script>
+  <script src="js/main.js?v=29"></script>
 </body>
 </html>
