@@ -313,10 +313,6 @@ body::before {
   padding: 64px 24px;
 }
 
-.section-alt {
-  position: relative;
-}
-
 /* Entry card backgrounds */
 .entry-works {
   background-image: url('../images/bg-works.png');
@@ -339,17 +335,14 @@ body::before {
 .entry-works,
 .entry-creative,
 .entry-learning {
-  border: 1px solid rgba(180,83,9,0.1);
+  border: 1px solid rgba(180,83,9,0.08);
 }
 
-.section-alt::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 10% 90%, rgba(180,83,9,0.02) 0%, transparent 40%),
-    radial-gradient(circle at 90% 10%, rgba(140,122,107,0.02) 0%, transparent 40%);
-  pointer-events: none;
+/* Two-column row for side-by-side cards (kept for other uses) */
+.entry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .container {
@@ -390,6 +383,32 @@ body::before {
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* ============================================
+   Section-specific backgrounds
+   ============================================ */
+
+.section-about {
+  background: url('../images/bg-about.png') center/cover no-repeat;
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+}
+
+.section-cards {
+  background: linear-gradient(180deg, rgba(253,246,240,0.3) 0%, rgba(245,237,227,0.5) 50%, rgba(253,246,240,0.3) 100%);
+}
+
+/* 3-column card grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* Featured card spans full width, takes the first slot and fills the row */
+.cards-grid .entry-featured {
+  grid-column: 1 / -1;
 }
 
 /* ============================================
@@ -956,7 +975,21 @@ body::before {
   transform: translateX(3px);
 }
 
+@media (max-width: 860px) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .cards-grid .entry-featured {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
   .entry-row {
     grid-template-columns: 1fr;
     gap: 16px;
