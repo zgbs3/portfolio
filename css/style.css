@@ -569,45 +569,126 @@ body {
 .section-entry {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
   text-decoration: none;
-  background: var(--card-bg);
-  backdrop-filter: var(--glass-blur);
+  background: var(--bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 32px;
-  transition: all 0.3s;
-  cursor: pointer;
+  border-radius: 14px;
+  padding: 28px 32px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-entry::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 0% 50%, rgba(180,83,9,0.03) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s;
 }
 
 .section-entry:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+  border-color: rgba(180,83,9,0.25);
 }
 
-.entry-icon {
+.section-entry:hover::before {
+  opacity: 1;
+}
+
+/* Icon area */
+.entry-visual {
   flex-shrink: 0;
-  width: 72px;
-  height: 72px;
+}
+
+.entry-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(180,83,9,0.1) 0%, rgba(180,83,9,0.04) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
-  background: linear-gradient(135deg, rgba(180,83,9,0.08) 0%, rgba(140,107,74,0.06) 100%);
-  border-radius: 18px;
+  position: relative;
+  transition: all 0.35s;
 }
 
+.section-entry:hover .entry-icon-circle {
+  background: linear-gradient(135deg, rgba(180,83,9,0.16) 0%, rgba(180,83,9,0.08) 100%);
+  transform: scale(1.05);
+}
+
+/* CSS-only icons */
+.entry-icon-shape {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+/* Works icon: play triangle via clip-path */
+.icon-works {
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  clip-path: polygon(20% 10%, 20% 90%, 85% 50%);
+  margin-left: 2px;
+}
+
+/* Creative icon: nested circles */
+.icon-creative {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid var(--accent);
+  border-radius: 50%;
+  position: relative;
+}
+.icon-creative::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Learning icon: horizontal lines */
+.icon-learning {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.icon-learning::before,
+.icon-learning::after {
+  content: '';
+  display: block;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.icon-learning::before { width: 22px; }
+.icon-learning::after  { width: 13px; }
+
+/* Text body */
 .entry-body {
   flex: 1;
+  min-width: 0;
 }
 
 .entry-body h3 {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .entry-body p {
@@ -617,30 +698,43 @@ body {
   margin-bottom: 10px;
 }
 
-.entry-link {
-  font-size: 0.9rem;
+/* Arrow link */
+.entry-arrow {
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--accent);
-  transition: transform 0.2s;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.3s;
 }
 
-.section-entry:hover .entry-link {
-  transform: translateX(4px);
+.entry-arrow .arrow {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.section-entry:hover .entry-arrow {
+  gap: 10px;
+}
+
+.section-entry:hover .entry-arrow .arrow {
+  transform: translateX(3px);
 }
 
 @media (max-width: 500px) {
   .section-entry {
     flex-direction: column;
     text-align: center;
-    gap: 16px;
-    padding: 24px;
+    gap: 18px;
+    padding: 28px 20px;
   }
-  .entry-icon {
-    width: 56px;
-    height: 56px;
-    font-size: 1.8rem;
-    border-radius: 14px;
+  .entry-icon-circle {
+    width: 52px;
+    height: 52px;
+  }
+  .entry-body h3 {
+    font-size: 1.15rem;
   }
 }
 
