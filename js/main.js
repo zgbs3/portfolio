@@ -139,9 +139,11 @@
     var btn = document.getElementById('btn-wechat');
     var overlay = document.getElementById('qr-overlay');
     var close = document.getElementById('qr-close');
+    var copyBtn = document.getElementById('qr-copy-btn');
     if (!btn || !overlay || !close) return;
 
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
       overlay.classList.add('qr-open');
     });
 
@@ -154,6 +156,36 @@
         overlay.classList.remove('qr-open');
       }
     });
+
+    // Copy button inside QR modal
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function() {
+        var text = btn.getAttribute('data-wechat');
+        if (!text) return;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function() {
+            copyBtn.textContent = '✓ 已复制';
+            setTimeout(function() { copyBtn.textContent = '📋 复制微信号'; }, 2000);
+          }).catch(function() {
+            fallbackCopy(text);
+          });
+        } else {
+          fallbackCopy(text);
+        }
+        function fallbackCopy(str) {
+          var ta = document.createElement('textarea');
+          ta.value = str;
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); } catch(e) {}
+          document.body.removeChild(ta);
+          copyBtn.textContent = '✓ 已复制';
+          setTimeout(function() { copyBtn.textContent = '📋 复制微信号'; }, 2000);
+        }
+      });
+    }
   })();
 
   // ============================================

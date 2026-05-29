@@ -814,6 +814,25 @@ body::before {
   color: var(--text-secondary);
 }
 
+.qr-copy-btn {
+  margin-top: 10px;
+  padding: 10px 28px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.qr-copy-btn:hover {
+  background: #92400e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(180,83,9,0.3);
+}
+
 .toast.toast-show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
