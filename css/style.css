@@ -403,24 +403,66 @@ body::before {
 .about-edu {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 24px;
-  padding: 12px 20px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 10px;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, rgba(253,246,240,0.9), rgba(255,255,255,0.7));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(180,83,9,0.15);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+  transition: all 0.3s;
+}
+
+.about-edu:hover {
+  border-color: rgba(180,83,9,0.3);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  transform: translateY(-1px);
 }
 
 .about-edu-badge {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  background: rgba(180,83,9,0.08);
-  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(180,83,9,0.12), rgba(180,83,9,0.06));
+  border: 1px solid rgba(180,83,9,0.15);
+  border-radius: 10px;
   flex-shrink: 0;
+}
+
+/* CSS graduation cap icon */
+.icon-graduation {
+  width: 20px;
+  height: 14px;
+  position: relative;
+}
+
+.icon-graduation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 10px;
+  border: 2px solid var(--accent);
+  border-radius: 3px 3px 0 0;
+  border-bottom: none;
+}
+
+.icon-graduation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
 }
 
 .about-edu-text {
@@ -430,14 +472,16 @@ body::before {
 }
 
 .about-edu-text strong {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--text);
 }
 
 .about-edu-text span {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #5c4a3b;
+}
 }
 
 /* ============================================
