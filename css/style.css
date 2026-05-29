@@ -338,6 +338,26 @@ body::before {
   border: 1px solid rgba(180,83,9,0.08);
 }
 
+/* Text shield: semi-transparent overlay so text is readable over background */
+.entry-works::before,
+.entry-creative::before,
+.entry-learning::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 246, 240, 0.75);
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.entry-works > *,
+.entry-creative > *,
+.entry-learning > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* Two-column row for side-by-side cards (kept for other uses) */
 .entry-row {
   display: grid;
