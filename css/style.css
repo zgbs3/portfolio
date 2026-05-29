@@ -31,6 +31,17 @@ body {
   color: var(--text);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Full-page fixed background image */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('../images/hero-bg.png') center/cover no-repeat;
+  z-index: -1;
+  opacity: 0.35;
 }
 
 #navbar {
@@ -39,7 +50,7 @@ body {
   left: 0;
   right: 0;
   height: var(--nav-height);
-  background: rgba(253, 246, 240, 0.85);
+  background: rgba(253, 246, 240, 0.7);
   backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--card-border);
   z-index: 100;
@@ -102,21 +113,10 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 600px 400px at 50% 30%, rgba(180, 83, 9, 0.05) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(180, 83, 9, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(140, 122, 107, 0.04) 0%, transparent 50%),
-    linear-gradient(180deg, #FDF6F0 0%, #F5EDE3 100%);
+    radial-gradient(ellipse 600px 400px at 50% 30%, rgba(180, 83, 9, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(180, 83, 9, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(140, 122, 107, 0.03) 0%, transparent 50%);
   z-index: 0;
-}
-
-/* Background image layer */
-.hero-bg-img {
-  position: absolute;
-  inset: 0;
-  background: url('../images/hero-bg.png') center/cover no-repeat;
-  z-index: 0;
-  opacity: 0.45;
-  filter: brightness(1.05) saturate(0.9);
 }
 
 .hero-bg::before {
