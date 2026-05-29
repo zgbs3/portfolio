@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>学习记录 · 郭宇</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body class="sub-page">
 
@@ -19,8 +19,8 @@
 
   <section class="section sub-hero">
     <div class="container">
-      <h1 class="sub-title">学习记录</h1>
-      <p class="sub-desc">每次遇到问题，每次找到答案——这是成长的足迹。</p>
+      <h1 class="sub-title reveal">学习记录</h1>
+      <p class="sub-desc reveal">每次遇到问题，每次找到答案——这是成长的足迹。</p>
     </div>
   </section>
 
@@ -36,6 +36,7 @@
     <p>&copy; 2026 郭宇</p>
   </footer>
 
+  <script src="js/main.js?v=4"></script>
   <script>
     (function() {
       fetch('data/learning.json')
@@ -44,12 +45,18 @@
           var list = document.getElementById('learning-list');
           if (!list || !items || items.length === 0) return;
           list.innerHTML = items.map(function(item) {
-            return '<div class="learning-item learning-item-open">' +
+            return '<div class="learning-item learning-item-open reveal">' +
               '<div class="problem">' + esc(item.problem) + '</div>' +
               '<div class="solution">' + esc(item.solution) + '</div>' +
               '<div class="date">' + esc(item.date) + '</div>' +
               '</div>';
           }).join('');
+
+          // Observe newly added reveal elements
+          var newItems = list.querySelectorAll('.reveal');
+          for (var i = 0; i < newItems.length; i++) {
+            window.__observeReveal && window.__observeReveal(newItems[i]);
+          }
         })
         .catch(function(err) { console.error(err); });
 
