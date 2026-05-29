@@ -386,22 +386,14 @@ body::before {
 }
 
 /* ============================================
-   About Card (with background)
+   About Section
    ============================================ */
 
 .about-card {
   position: relative;
   border-radius: 14px;
   padding: 36px 32px;
-  overflow: hidden;
-  background: rgba(253, 246, 240, 0.6);
-}
-
-.about-card .section-title,
-.about-card .about-content,
-.about-card .about-edu {
-  position: relative;
-  z-index: 1;
+  background: rgba(253, 246, 240, 0.4);
 }
 
 /* ============================================
@@ -425,19 +417,26 @@ body::before {
   gap: 14px;
   margin-top: 28px;
   padding: 16px 24px;
-  background: linear-gradient(135deg, rgba(253,246,240,0.9), rgba(255,255,255,0.7));
   backdrop-filter: blur(8px);
   border: 1px solid rgba(180,83,9,0.15);
   border-left: 3px solid var(--accent);
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.03);
   transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .about-edu:hover {
   border-color: rgba(180,83,9,0.3);
   box-shadow: 0 4px 24px rgba(0,0,0,0.05);
   transform: translateY(-1px);
+}
+
+.about-edu-badge,
+.about-edu-text {
+  position: relative;
+  z-index: 1;
 }
 
 .about-edu-badge {
