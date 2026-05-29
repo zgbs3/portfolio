@@ -562,27 +562,86 @@ body {
   width: 60px; /* balance the back link */
 }
 
-/* View more link */
-.section-more {
-  text-align: center;
-  margin-top: 28px;
-}
+/* ============================================
+   Section Entry Cards (gateway to sub-pages)
+   ============================================ */
 
-.more-link {
-  display: inline-block;
+.section-entry {
+  display: flex;
+  align-items: center;
+  gap: 28px;
   text-decoration: none;
-  color: var(--accent);
-  font-size: 0.95rem;
-  font-weight: 500;
-  padding: 8px 24px;
-  border: 1px solid var(--accent);
-  border-radius: 20px;
-  transition: all 0.2s;
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
-.more-link:hover {
-  background: var(--accent);
-  color: #fff;
+.section-entry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  border-color: var(--accent);
+}
+
+.entry-icon {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, rgba(180,83,9,0.08) 0%, rgba(140,107,74,0.06) 100%);
+  border-radius: 18px;
+}
+
+.entry-body {
+  flex: 1;
+}
+
+.entry-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.entry-body p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.entry-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.section-entry:hover .entry-link {
+  transform: translateX(4px);
+}
+
+@media (max-width: 500px) {
+  .section-entry {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 24px;
+  }
+  .entry-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.8rem;
+    border-radius: 14px;
+  }
 }
 
 /* Learning items always open on sub-page */
