@@ -159,6 +159,30 @@ body {
   line-height: 1.8;
 }
 
+.hero-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.hero-skill-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(180, 83, 9, 0.06);
+  border: 1px solid rgba(180, 83, 9, 0.12);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  transition: all 0.2s;
+}
+
+.hero-skill-tag:hover {
+  background: rgba(180, 83, 9, 0.12);
+  border-color: var(--accent);
+}
+
 .hero-scroll-hint {
   margin-top: 48px;
   font-size: 1.5rem;
@@ -241,6 +265,27 @@ body {
 
 .edu-placeholder {
   text-align: center;
+  color: var(--text-secondary);
+}
+
+.edu-item {
+  max-width: 500px;
+}
+
+.edu-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.edu-major {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.edu-years {
+  font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
