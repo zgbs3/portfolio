@@ -84,6 +84,55 @@
   })();
 
   // ============================================
+  // Typewriter effect for hero tagline
+  // ============================================
+  (function() {
+    var el = document.querySelector('.hero-tagline');
+    if (!el) return;
+    var fullText = el.textContent;
+    el.textContent = '';
+    el.classList.add('typing');
+    var i = 0;
+    var timer = setInterval(function() {
+      if (i < fullText.length) {
+        el.textContent += fullText[i];
+        i++;
+      } else {
+        clearInterval(timer);
+        el.classList.remove('typing');
+        el.classList.add('typed');
+      }
+    }, 130);
+  })();
+
+  // ============================================
+  // Back to top button
+  // ============================================
+  (function() {
+    var btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    var scrollTicking = false;
+    window.addEventListener('scroll', function() {
+      if (!scrollTicking) {
+        requestAnimationFrame(function() {
+          if (window.scrollY > 500) {
+            btn.classList.add('btt-visible');
+          } else {
+            btn.classList.remove('btt-visible');
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    });
+
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // ============================================
   // Copy to clipboard for contact info
   // ============================================
   (function() {
