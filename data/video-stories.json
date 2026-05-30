@@ -3,7 +3,7 @@
     "video": "pacific-rim.mp4",
     "title": "环太平洋风格动画",
     "tools": ["RunningHub 无限画布", "即梦", "image2", "banana", "GPT"],
-    "process": "在 RunningHub 无限画布中搭建视觉工作流，结合即梦 image2 进行关键帧生成，banana 做动画过渡，GPT 辅助文本提示词。",
+    "process": "在 RunningHub 无限画布中搭建视觉工作流，通过 image2 和 banana 进行关键帧生成，GPT 辅助文本提示词，即梦生成视频。",
     "link": {"text": "无限画布原链接", "url": "https://rhtv.runninghub.cn/camp/view/2056966203898908673"},
     "notes": "不足与优化：待补充"
   },
