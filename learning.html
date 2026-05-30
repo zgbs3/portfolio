@@ -82,9 +82,23 @@
         return d.innerHTML;
       }
       function nl2p(s) {
-        return s.split('\n\n').map(function(p) {
-          return '<p>' + esc(p.trim()) + '</p>';
-        }).join('');
+        var blocks = s.split('\n\n');
+        var html = '';
+        for (var i = 0; i < blocks.length; i++) {
+          var t = blocks[i].trim();
+          if (!t) continue;
+          // Single newlines → soft break
+          t = esc(t).replace(/\n/g, '<br>');
+          // 【...】 prefix → sub-heading + paragraph
+          var m = t.match(/^(【[^】]+】)(.*)/);
+          if (m) {
+            html += '<h5>' + m[1] + '</h5>';
+            if (m[2].trim()) html += '<p>' + m[2].trim() + '</p>';
+          } else {
+            html += '<p>' + t + '</p>';
+          }
+        }
+        return html;
       }
     })();
   </script>

@@ -691,14 +691,19 @@ body::before {
   background: var(--card-bg);
   backdrop-filter: var(--glass-blur);
   border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  padding: 24px 28px;
 }
 
 .learning-item .problem {
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--accent);
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--divider);
 }
 
 .learning-item .solution {
@@ -712,6 +717,21 @@ body::before {
 
 .learning-item .solution p:last-child {
   margin-bottom: 0;
+}
+
+.learning-item .solution h5,
+.creative-desc h5 {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 14px 0 6px 0;
+  letter-spacing: 0.03em;
+}
+
+.learning-item .solution h5:first-child,
+.creative-desc h5:first-child {
+  margin-top: 0;
 }
 
 .learning-item .date {
