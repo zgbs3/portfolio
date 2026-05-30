@@ -1,0 +1,3 @@
+{
+  "installCommand": "git lfs install --skip-repo && git lfs pull"
+}
