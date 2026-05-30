@@ -35,7 +35,7 @@
       <div class="works-category">
         <h3>长片（>1分钟）</h3>
         <div class="works-grid">
-          <div class="work-card reveal">
+          <div class="work-card reveal" data-video="pacific-rim.mp4">
             <video controls preload="auto" poster="images/cover-pacific-rim.jpg">
               <source src="videos/pacific-rim.mp4" type="video/mp4">
             </video>
@@ -44,7 +44,7 @@
               <div class="work-meta">时长 2'30" · AI生成动画</div>
             </div>
           </div>
-          <div class="work-card reveal">
+          <div class="work-card reveal" data-video="character-travel.mp4">
             <video controls preload="auto" poster="images/cover-character-travel.png">
               <source src="https://github.com/zgbs3/portfolio/releases/download/v1.0/character-travel.mp4" type="video/mp4">
             </video>
@@ -59,7 +59,7 @@
       <div class="works-category">
         <h3>短创意（≤30秒）</h3>
         <div class="works-grid">
-          <div class="work-card reveal">
+          <div class="work-card reveal" data-video="creative-product.mp4">
             <video controls preload="auto" poster="images/cover-creative-product.png">
               <source src="videos/creative-product.mp4" type="video/mp4">
             </video>
@@ -74,7 +74,7 @@
       <div class="works-category">
         <h3>风格尝试（~15秒）</h3>
         <div class="works-grid">
-          <div class="work-card reveal">
+          <div class="work-card reveal" data-video="style-01.mp4">
             <video controls preload="auto" poster="images/cover-style-01.png">
               <source src="videos/style-01.mp4" type="video/mp4">
             </video>
@@ -83,7 +83,7 @@
               <div class="work-meta">时长 15" · 即梦AI</div>
             </div>
           </div>
-          <div class="work-card reveal">
+          <div class="work-card reveal" data-video="style-02.mp4">
             <video controls preload="auto" poster="images/cover-style-02.png">
               <source src="videos/style-02.mp4" type="video/mp4">
             </video>
@@ -92,7 +92,7 @@
               <div class="work-meta">时长 15" · 即梦AI</div>
             </div>
           </div>
-          <div class="work-card reveal">
+          <div class="work-card reveal" data-video="style-03.mp4">
             <video controls preload="auto" poster="images/cover-style-03.png">
               <source src="videos/style-03.mp4" type="video/mp4">
             </video>
@@ -128,6 +128,48 @@
 
   <button id="back-to-top" aria-label="回到顶部">↑</button>
   <script src="js/main.js?v=16"></script>
+  <script>
+    (function() {
+      fetch('data/video-stories.json?v=1')
+        .then(function(r) { return r.json(); })
+        .then(function(stories) {
+          var cards = document.querySelectorAll('.work-card');
+          cards.forEach(function(card) {
+            var video = card.getAttribute('data-video');
+            var story = stories.find(function(s) { return s.video === video; });
+            if (!story) return;
+            var info = card.querySelector('.work-card-info');
+            if (!info) return;
+            var div = document.createElement('div');
+            div.className = 'work-story';
+            var html = '';
+            if (story.tools && story.tools.length > 0) {
+              html += '<div class="story-tools"><strong>工具：</strong>' +
+                story.tools.map(function(t) { return '<span class="story-tool-tag">' + t + '</span>'; }).join(' ') +
+                '</div>';
+            }
+            if (story.process) {
+              html += '<div class="story-process"><strong>创作过程：</strong>' + esc(story.process) + '</div>';
+            }
+            if (story.link) {
+              html += '<a class="story-link" href="' + esc(story.link.url) + '" target="_blank" rel="noopener">🔗 ' + esc(story.link.text) + '</a>';
+            }
+            if (story.notes) {
+              html += '<div class="story-notes">' + esc(story.notes) + '</div>';
+            }
+            div.innerHTML = html;
+            info.parentNode.insertBefore(div, info.nextSibling);
+          });
+        })
+        .catch(function(err) { console.error(err); });
+
+      function esc(s) {
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(s));
+        return d.innerHTML;
+      }
+    })();
+  </script>
   <script>
     (function() {
       var lightbox = document.getElementById('video-lightbox');

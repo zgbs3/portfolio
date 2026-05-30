@@ -1,0 +1,50 @@
+[
+  {
+    "video": "pacific-rim.mp4",
+    "title": "环太平洋风格动画",
+    "tools": ["RunningHub 无限画布", "即梦", "image2", "banana", "GPT"],
+    "process": "在 RunningHub 无限画布中搭建视觉工作流，结合即梦 image2 进行关键帧生成，banana 做动画过渡，GPT 辅助文本提示词。",
+    "link": {"text": "无限画布原链接", "url": "https://rhtv.runninghub.cn/camp/view/2056966203898908673"},
+    "notes": "不足与优化：待补充"
+  },
+  {
+    "video": "character-travel.mp4",
+    "title": "动画角色旅游视频",
+    "tools": [],
+    "process": "",
+    "link": null,
+    "notes": "待补充"
+  },
+  {
+    "video": "creative-product.mp4",
+    "title": "芥末起床唤醒器",
+    "tools": [],
+    "process": "",
+    "link": null,
+    "notes": "待补充"
+  },
+  {
+    "video": "style-01.mp4",
+    "title": "风格尝试 ① — 超广角 FPV",
+    "tools": [],
+    "process": "",
+    "link": null,
+    "notes": "待补充"
+  },
+  {
+    "video": "style-02.mp4",
+    "title": "风格尝试 ② — 极致超广角微距",
+    "tools": [],
+    "process": "",
+    "link": null,
+    "notes": "待补充"
+  },
+  {
+    "video": "style-03.mp4",
+    "title": "风格尝试 ③ — 拆解复原",
+    "tools": [],
+    "process": "",
+    "link": null,
+    "notes": "待补充"
+  }
+]
