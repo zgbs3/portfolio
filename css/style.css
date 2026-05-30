@@ -674,7 +674,8 @@ body::before {
   margin-bottom: 4px;
 }
 
-.creative-card-body p {
+.creative-card-body p,
+.creative-desc p {
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -703,6 +704,14 @@ body::before {
 .learning-item .solution {
   color: var(--text);
   line-height: 1.8;
+}
+
+.learning-item .solution p {
+  margin-bottom: 10px;
+}
+
+.learning-item .solution p:last-child {
+  margin-bottom: 0;
 }
 
 .learning-item .date {
