@@ -10,7 +10,7 @@
   --glass-blur: blur(12px);
   --font-serif: 'Noto Serif SC', Georgia, serif;
   --font-sans: 'Noto Sans SC', 'Inter', sans-serif;
-  --max-width: 1000px;
+  --max-width: 900px;
   --nav-height: 60px;
 }
 
@@ -531,9 +531,6 @@ body::before {
 }
 
 @media (max-width: 640px) {
-  .works-grid {
-    grid-template-columns: 1fr;
-  }
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -559,8 +556,8 @@ body::before {
 
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .work-card {
@@ -570,7 +567,6 @@ body::before {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s;
-  max-width: 640px;
 }
 
 .work-card:hover {
@@ -581,8 +577,6 @@ body::before {
   width: 100%;
   display: block;
   background: #1a1a1a;
-  min-height: 280px;
-  cursor: pointer;
 }
 
 .work-card-info {
