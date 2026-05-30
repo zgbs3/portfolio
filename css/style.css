@@ -582,6 +582,7 @@ body::before {
   display: block;
   background: #1a1a1a;
   min-height: 280px;
+  cursor: pointer;
 }
 
 .work-card-info {
@@ -597,6 +598,46 @@ body::before {
 .work-card-info .work-meta {
   font-size: 0.8rem;
   color: var(--text-secondary);
+}
+
+/* Video Lightbox */
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.video-lightbox.open { opacity: 1; pointer-events: auto; }
+.video-lightbox-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+}
+.video-lightbox-close {
+  position: absolute;
+  top: 20px; right: 28px;
+  z-index: 2;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.video-lightbox-close:hover { opacity: 1; }
+.video-lightbox video {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 /* ============================================

@@ -119,7 +119,46 @@
     </div>
   </footer>
 
+  <!-- Video lightbox -->
+  <div class="video-lightbox" id="video-lightbox">
+    <div class="video-lightbox-bg"></div>
+    <button class="video-lightbox-close" id="lightbox-close">&times;</button>
+    <video id="lightbox-video" controls playsinline></video>
+  </div>
+
   <button id="back-to-top" aria-label="回到顶部">↑</button>
   <script src="js/main.js?v=12"></script>
+  <script>
+    (function() {
+      var lightbox = document.getElementById('video-lightbox');
+      var lightboxVideo = document.getElementById('lightbox-video');
+      var closeBtn = document.getElementById('lightbox-close');
+      var bg = document.querySelector('.video-lightbox-bg');
+      if (!lightbox || !lightboxVideo) return;
+
+      // Click paused video → open lightbox; playing video → normal controls
+      document.addEventListener('click', function(e) {
+        var video = e.target.closest('video');
+        if (!video || !video.closest('.work-card')) return;
+        if (!video.paused) return; // playing, use normal controls
+        e.preventDefault();
+        lightboxVideo.setAttribute('src', video.querySelector('source').getAttribute('src'));
+        if (video.getAttribute('poster')) {
+          lightboxVideo.setAttribute('poster', video.getAttribute('poster'));
+        }
+        lightbox.classList.add('open');
+        lightboxVideo.play().catch(function(){});
+      });
+
+      // Close
+      function close() {
+        lightbox.classList.remove('open');
+        lightboxVideo.pause();
+        lightboxVideo.removeAttribute('src');
+      }
+      closeBtn.addEventListener('click', close);
+      bg.addEventListener('click', close);
+    })();
+  </script>
 </body>
 </html>
