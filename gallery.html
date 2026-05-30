@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>照片墙 · 郭宇</title>
+  <meta name="description" content="工作瞬间、幕后花絮、生活记录。">
+  <meta property="og:title" content="照片墙 · 郭宇">
+  <meta property="og:description" content="工作瞬间、幕后花絮、生活记录。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=34">
+</head>
+<body class="sub-page">
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-back" href="index.html">← 返回主页</a>
+      <span class="nav-logo">GY</span>
+      <span class="nav-spacer"></span>
+    </div>
+  </nav>
+
+  <section class="section sub-hero">
+    <div class="container">
+      <h1 class="sub-title reveal">照片墙</h1>
+      <p class="sub-desc reveal">工作瞬间、幕后花絮、生活记录。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-grid" id="gallery-grid">
+        <p style="color:var(--text-secondary);grid-column:1/-1;text-align:center;padding:40px;">照片即将上线...</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="works.html">作品</a>
+        <a href="creative.html">创意</a>
+        <a href="learning.html">学习</a>
+        <a href="gallery.html">照片墙</a>
+      </div>
+      <p class="footer-tagline">永远热情，永远追逐。</p>
+      <p class="footer-copy">&copy; 2026 郭宇</p>
+    </div>
+  </footer>
+
+  <!-- Photo lightbox -->
+  <div class="photo-lightbox" id="photo-lightbox">
+    <div class="photo-lightbox-bg"></div>
+    <button class="photo-lightbox-close" id="photo-close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <script src="js/main.js?v=34"></script>
+  <script>
+    (function() {
+      fetch('data/gallery.json?v=1')
+        .then(function(res) { return res.json(); })
+        .then(function(photos) {
+          var grid = document.getElementById('gallery-grid');
+          if (!grid || !photos || photos.length === 0) return;
+          grid.innerHTML = photos.map(function(photo) {
+            return '<div class="gallery-item reveal">' +
+              '<img src="' + esc(photo.src) + '" alt="' + esc(photo.alt || '') + '" loading="lazy">' +
+              (photo.caption ? '<div class="gallery-caption">' + esc(photo.caption) + '</div>' : '') +
+              '</div>';
+          }).join('');
+
+          var newItems = grid.querySelectorAll('.reveal');
+          for (var i = 0; i < newItems.length; i++) {
+            window.__observeReveal && window.__observeReveal(newItems[i]);
+          }
+        })
+        .catch(function(err) { console.error(err); });
+
+      // Photo lightbox
+      var lightbox = document.getElementById('photo-lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      var closeBtn = document.getElementById('photo-close');
+      var bg = document.querySelector('.photo-lightbox-bg');
+      if (!lightbox || !lightboxImg) return;
+
+      document.addEventListener('click', function(e) {
+        var img = e.target.closest('.gallery-item img');
+        if (!img) return;
+        lightboxImg.setAttribute('src', img.getAttribute('src'));
+        lightbox.classList.add('open');
+      });
+
+      function close() {
+        lightbox.classList.remove('open');
+        lightboxImg.removeAttribute('src');
+      }
+      closeBtn.addEventListener('click', close);
+      bg.addEventListener('click', close);
+
+      function esc(s) {
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(s));
+        return d.innerHTML;
+      }
+    })();
+  </script>
+
+</body>
+</html>
