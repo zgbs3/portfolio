@@ -55,7 +55,7 @@
   <script src="js/main.js?v=30"></script>
   <script>
     (function() {
-      fetch('data/learning.json')
+      fetch('data/learning.json?v=2')
         .then(function(res) { return res.json(); })
         .then(function(items) {
           var list = document.getElementById('learning-list');
